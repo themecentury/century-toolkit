@@ -42,7 +42,19 @@ class TCY_Admin_Demo_Config
 
     private function supported_themes(){
 
-        $supported_themes = apply_filters( 'century_toolkit_supported_themes', array() );
+        $demo_support =array(
+
+            'newspaper_lite' => array(
+                'theme_name' => 'Newspaper Lite',
+                'demo_class' => 'TCY_Theme_Demo_Newspaper_Lite',
+            ),
+            'newspaper_plus' => array(
+                'theme_name' => 'Newspaper Plus',
+                'demo_class' => 'TCY_Theme_Demo_Newspaper_Plus',
+            )
+        );
+
+        $supported_themes = apply_filters( 'century_toolkit_supported_themes', $demo_support );
         
         return $supported_themes;
         

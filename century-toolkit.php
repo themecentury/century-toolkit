@@ -3,7 +3,7 @@
 Plugin Name: Century ToolKit
 Plugin URI: https://wordpress.org/plugins/century-toolkit/
 Description: Demo importer for ThemeCentury themes.
-Version: 1.0.1
+Version: 1.0.0
 Author: ThemeCentury Team
 Author URI: https://themecentury.com/
 License: GPL3
@@ -34,9 +34,9 @@ if ( ! class_exists( 'ThemeCentury_Demo_Importer' ) ) {
  * @since 1.0.0
  * @return ThemeCentury_Demo_Importer
  */
-function MG() {
+function century_toolkit() {
 	return ThemeCentury_Demo_Importer::instance();
 }
 
 // Global for backwards compatibility.
-$GLOBALS['century-toolkit'] = MG();
+$GLOBALS['century-toolkit'] = century_toolkit();

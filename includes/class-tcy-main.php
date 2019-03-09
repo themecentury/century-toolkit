@@ -306,7 +306,7 @@ class TCY_Main{
 
 		// Enqueue the scripts only on the plugin page.
 		if ( $this->plugin_page === $hook ) {
-			wp_enqueue_script( 'mg-main-js', MG()->plugin_url() . '/assets/js/main.js', array(
+			wp_enqueue_script( 'mg-main-js', century_toolkit()->plugin_url() . '/assets/js/main.js', array(
 				'jquery',
 				'jquery-form'
 			), TCY_VERSION );
@@ -322,7 +322,7 @@ class TCY_Main{
 				)
 			);
 
-			wp_enqueue_style( 'mg-main-css', MG()->plugin_url() . '/assets/css/main.css', array(), TCY_VERSION );
+			wp_enqueue_style( 'mg-main-css', century_toolkit()->plugin_url() . '/assets/css/main.css', array(), TCY_VERSION );
 		}
 	}
 
