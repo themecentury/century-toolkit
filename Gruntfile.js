@@ -158,6 +158,7 @@ module.exports = function (grunt) {
                     potFilename: 'century-toolkit.pot',
                     exclude: [
                         'vendor/.*'
+                        'upload/.*'
                     ]
                 }
             }
@@ -255,7 +256,7 @@ module.exports = function (grunt) {
                     '!composer.lock',
                     '!node_modules/**',
                     '!phpcs.ruleset.xml',
-                    '!theme-demo/**',
+                    '!upload/**',
                 ],
                 dest: 'century-toolkit',
                 expand: true
