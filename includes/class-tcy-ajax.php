@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * AJAX Event Handler.
  *
  * @class    TCY_AJAX
- * @package  MirrorGridDemoImporter/Classes
+ * @package  CenturyToolKit/Classes
  * @category Class
  * @author   ThemeCentury
  */

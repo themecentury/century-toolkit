@@ -20,8 +20,8 @@ class TCY_Admin_Demo_Config
 
     public function __construct(){
         $this->theme = wp_get_theme();
-        add_filter('mg-demo-content-import', array($this, 'import_files'));
-        add_action('mg-after-demo-content-import', array($this, 'after_import'));
+        add_filter('cty-tolkit-demo-content-import', array($this, 'import_files'));
+        add_action('cty-after-demo-content-import', array($this, 'after_import'));
     }
 
     private function get_import_class(){
@@ -41,9 +41,8 @@ class TCY_Admin_Demo_Config
     }
 
     private function supported_themes(){
-
+        
         $demo_support =array(
-
             'newspaper_lite' => array(
                 'theme_name' => 'Newspaper Lite',
                 'demo_class' => 'TCY_Theme_Demo_Newspaper_Lite',
@@ -51,9 +50,12 @@ class TCY_Admin_Demo_Config
             'newspaper_plus' => array(
                 'theme_name' => 'Newspaper Plus',
                 'demo_class' => 'TCY_Theme_Demo_Newspaper_Plus',
+            ),
+            'lekh' => array(
+                'theme_name' => 'Lekh',
+                'demo_class' => 'TCY_Theme_Demo_Lekh_Free',
             )
         );
-
         $supported_themes = apply_filters( 'century_toolkit_supported_themes', $demo_support );
         
         return $supported_themes;

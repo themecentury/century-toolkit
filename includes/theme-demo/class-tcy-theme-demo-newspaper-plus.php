@@ -7,29 +7,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 class TCY_Theme_Demo_Newspaper_Plus extends TCY_Theme_Demo {
 
 	public static function import_files() {
-		$template_directory = get_template_directory_uri() . '/demo-content/';
 
-		$template_directory = 'https://themecentury.com/demo/newspaper-plus/';
-
-		$demo_urls = array(
+		$demo_server_url = 'https://raw.githubusercontent.com/themecentury/demo/master/newspaper-plus/default/';
+		$demo_url = 'https://demo.themecentury.com/wpthemes/newspaper-plus/';
+		$demo_urls  = array(
 			array(
 				'import_file_name'           => 'Newspaper Plus',
-				'import_file_url'            =>  $template_directory.'wp-content/themes/newspaper-plus/demo-content/content.xml',
-				'import_widget_file_url'     =>  $template_directory.'wp-content/themes/newspaper-plus/demo-content/widgets.wie',
-				'import_customizer_file_url' =>  $template_directory.'wp-content/themes/newspaper-plus/demo-content/customizer.dat',
-				'import_preview_image_url'   =>  $template_directory.'wp-content/themes/newspaper-plus/screenshot.png',
-				'demo_url'                   => 'https://themecentury.com/demo/newspaper-plus/',
+				'import_file_url'            => $demo_server_url . 'content.xml',
+				'import_widget_file_url'     => $demo_server_url . 'widgets.wie',
+				'import_customizer_file_url' => $demo_server_url . 'customizer.dat',
+				'import_preview_image_url'   => 'https://i0.wp.com/themes.svn.wordpress.org/newspaper-lite/1.0.4/screenshot.png',
+				'demo_url'                   => $demo_url . '',
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 			)
 		);
-
 		return $demo_urls;
+
 	}
 
 	public static function after_import( $selected_import ) {
 
-// Assign front page and posts page (blog page).
-
+		// Assign front page and posts page (blog page).
 
 		$installed_demos  = get_option( 'themecentury_themes', array() );
 		$import_file_name = isset( $selected_import['import_file_name'] ) ? $selected_import['import_file_name'] : '';

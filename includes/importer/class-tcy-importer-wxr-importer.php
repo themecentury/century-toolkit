@@ -320,6 +320,7 @@ class TCY_Importer_WXR_Importer {
 	 * @param string $file Path to the WXR file for importing
 	 */
 	public function import( $file ) {
+		
 		add_filter( 'import_post_meta_key', array( $this, 'is_valid_meta_key' ) );
 		add_filter( 'http_request_timeout', array( &$this, 'bump_request_timeout' ) );
 

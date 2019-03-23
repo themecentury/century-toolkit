@@ -46,7 +46,7 @@ class TCY_Main{
 		// Actions.
 		add_action( 'admin_menu', array( $this, 'create_plugin_page' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-		add_action( 'wp_ajax_TCY_import_demo_data', array( $this, 'import_demo_data_ajax_callback' ) );
+		add_action( 'wp_ajax_cty_tolkit_import_demo_data', array( $this, 'import_demo_data_ajax_callback' ) );
 		add_action( 'after_setup_theme', array( $this, 'setup_plugin_with_filter_data' ) );
 	}
 
@@ -55,7 +55,9 @@ class TCY_Main{
 	 * Creates the plugin page and a submenu item in WP Appearance menu.
 	 */
 	public function create_plugin_page() {
-		$plugin_page_setup = apply_filters( 'century-toolkit/plugin_page_setup', array(
+		$plugin_page_setup = apply_filters( 
+			'century-toolkit/plugin_page_setup', 
+			array(
 				'parent_slug' => 'themes.php',
 				'page_title'  => esc_html__( 'Century ToolKit', 'century-toolkit' ),
 				'menu_title'  => esc_html__( 'Import Demo Content', 'century-toolkit' ),
@@ -64,10 +66,17 @@ class TCY_Main{
 			)
 		);
 
-		$this->plugin_page = add_submenu_page( $plugin_page_setup['parent_slug'], $plugin_page_setup['page_title'], $plugin_page_setup['menu_title'], $plugin_page_setup['capability'], $plugin_page_setup['menu_slug'], array(
-			$this,
-			'display_plugin_page'
-		) );
+		$this->plugin_page = add_submenu_page( 
+			$plugin_page_setup['parent_slug'], 
+			$plugin_page_setup['page_title'], 
+			$plugin_page_setup['menu_title'], 
+			$plugin_page_setup['capability'], 
+			$plugin_page_setup['menu_slug'], 
+			array(
+				$this,
+				'display_plugin_page'
+			) 
+		);
 	}
 
 
@@ -77,15 +86,15 @@ class TCY_Main{
 	public function display_plugin_page() {
 		?>
 
-        <div class="TCY__intro-notice notice notice-warning is-dismissible">
-            <p><?php esc_html_e( 'Before you begin, make sure all the required plugins are activated.', 'century-toolkit' ); ?></p>
-        </div>
+		<div class="tcy-intro-notice notice notice-warning is-dismissible">
+			<p><?php esc_html_e( 'Before you begin, make sure all the required plugins are activated.', 'century-toolkit' ); ?></p>
+		</div>
 
-        <div class="wrap">
+		<div class="wrap">
 
-            <h1 class="wp-heading-inline"><?php esc_html_e( 'Century ToolKit', 'century-toolkit' ); ?><span
-                        class="title-count theme-count"><?php echo count( $this->import_files ); ?></span>
-            </h1>
+			<h1 class="wp-heading-inline"><?php esc_html_e( 'Century ToolKit', 'century-toolkit' ); ?><span
+				class="title-count theme-count"><?php echo count( $this->import_files ); ?></span>
+			</h1>
 
 			<?php
 
@@ -106,144 +115,143 @@ class TCY_Main{
 
 			<?php if ( empty( $this->import_files ) ) : ?>
 
-                <div class="TCY__intro-text">
+				<div class="TCY__intro-text">
 
-                    <p class="about-description">
+					<p class="about-description">
 						<?php esc_html_e( 'Quickly import your theme\'s live demo content, widgets and settings. This will provide you with a basic layout to build your website and speed up the development process.', 'century-toolkit' ); ?>
-                    </p>
+					</p>
 
-                    <h3><?php esc_html_e( 'The following data will be imported:', 'century-toolkit' ); ?></h3>
+					<h3><?php esc_html_e( 'The following data will be imported:', 'century-toolkit' ); ?></h3>
 
-                    <ul>
-                        <li><?php esc_html_e( 'Posts', 'century-toolkit' ); ?></li>
-                        <li><?php esc_html_e( 'Pages', 'century-toolkit' ); ?></li>
-                        <li><?php esc_html_e( 'Images', 'century-toolkit' ); ?></li>
-                        <li><?php esc_html_e( 'Widgets', 'century-toolkit' ); ?></li>
-                        <li><?php esc_html_e( 'Menus', 'century-toolkit' ); ?></li>
-                        <li><?php esc_html_e( 'Settings', 'century-toolkit' ); ?></li>
-                    </ul>
+					<ul>
+						<li><?php esc_html_e( 'Posts', 'century-toolkit' ); ?></li>
+						<li><?php esc_html_e( 'Pages', 'century-toolkit' ); ?></li>
+						<li><?php esc_html_e( 'Images', 'century-toolkit' ); ?></li>
+						<li><?php esc_html_e( 'Widgets', 'century-toolkit' ); ?></li>
+						<li><?php esc_html_e( 'Menus', 'century-toolkit' ); ?></li>
+						<li><?php esc_html_e( 'Settings', 'century-toolkit' ); ?></li>
+					</ul>
 
-                    <p>
-                        <strong><?php esc_html_e( 'NOTE: Your existing content will NOT be deleted or modified.', 'century-toolkit' ); ?></strong>
-                    </p>
+					<p>
+						<strong><?php esc_html_e( 'NOTE: Your existing content will NOT be deleted or modified.', 'century-toolkit' ); ?></strong>
+					</p>
 
-                    <hr>
+					<hr>
 
-                </div>
-                <div class="notice  notice-info  is-dismissible">
-                    <p>
+				</div>
+				<div class="notice  notice-info  is-dismissible">
+					<p>
 						<?php
 						echo sprintf( esc_html( 'Sorry we could not find any predefined import files available . Please upload the import files manually or please %sContact Us%s', 'century-toolkit' ), '<a href="http://themecentury.com/support-forum">', '</a>' );
 						?>
-                    </p>
-                </div>
+					</p>
+				</div>
 
-                <div class="TCY__file-upload-container">
+				<div class="TCY__file-upload-container">
 
-                    <h2><?php esc_html_e( 'Manually upload the demo files', 'century-toolkit' ); ?></h2>
+					<h2><?php esc_html_e( 'Manually upload the demo files', 'century-toolkit' ); ?></h2>
 
-                    <div class="TCY__file-upload">
-                        <h3>
-                            <label for="content-file-upload"><?php esc_html_e( 'Choose a XML file for content import:', 'century-toolkit' ); ?></label>
-                        </h3>
-                        <input id="TCY__content-file-upload" type="file" name="content-file-upload">
-                    </div>
+					<div class="TCY__file-upload">
+						<h3>
+							<label for="content-file-upload"><?php esc_html_e( 'Choose a XML file for content import:', 'century-toolkit' ); ?></label>
+						</h3>
+						<input id="TCY__content-file-upload" type="file" name="content-file-upload">
+					</div>
 
-                    <div class="TCY__file-upload">
-                        <h3>
-                            <label for="widget-file-upload"><?php esc_html_e( 'Choose a WIE or JSON file for widget import:', 'century-toolkit' ); ?></label>
-                            <span><?php esc_html_e( '(*optional)', 'century-toolkit' ); ?></span></h3>
-                        <input id="TCY__widget-file-upload" type="file" name="widget-file-upload">
-                    </div>
+					<div class="TCY__file-upload">
+						<h3>
+							<label for="widget-file-upload"><?php esc_html_e( 'Choose a WIE or JSON file for widget import:', 'century-toolkit' ); ?></label>
+							<span><?php esc_html_e( '(*optional)', 'century-toolkit' ); ?></span>
+						</h3>
+						<input id="TCY__widget-file-upload" type="file" name="widget-file-upload">
+					</div>
 
-                    <div class="TCY__file-upload">
-                        <h3>
-                            <label for="customizer-file-upload"><?php esc_html_e( 'Choose a DAT file for customizer import:', 'century-toolkit' ); ?></label>
-                            <span><?php esc_html_e( '(*optional)', 'century-toolkit' ); ?></span></h3>
-                        <input id="TCY__customizer-file-upload" type="file" name="customizer-file-upload">
-                    </div>
+					<div class="TCY__file-upload">
+						<h3>
+							<label for="customizer-file-upload"><?php esc_html_e( 'Choose a DAT file for customizer import:', 'century-toolkit' ); ?></label>
+							<span><?php esc_html_e( '(*optional)', 'century-toolkit' ); ?></span></h3>
+							<input id="TCY__customizer-file-upload" type="file" name="customizer-file-upload">
+						</div>
+					</div>
+					<?php elseif ( 0 < count( $this->import_files ) ) : ?>
+						<div class="TCY__multi-select-import">
+							<h2><?php esc_html_e( 'Choose which demo you want to import:', 'century-toolkit' ); ?></h2>
+							<div class="theme-browser rendered">
+								<div class="themes wp-clearfix">
+									<?php
+									//delete_option( 'themecentury_themes');
+									$installed_demos = get_option( 'themecentury_themes', array() );
+									foreach ( $this->import_files as $index => $import_file ) :
+										$is_installed = false;
+										$import_file_name = isset( $import_file['import_file_name'] ) ? $import_file['import_file_name'] : '';
+										$is_comming_soon = isset($import_file['is_comming_soon']) ? $import_file['is_comming_soon'] : false;
+										if ( in_array( $import_file_name, $installed_demos ) ) {
+											$is_installed = true;
+										}
+										?>
+										<div class="theme <?php echo $is_installed ? 'active' : '' ?>">
+											<div class="theme-screenshot">
+												<img src="<?php echo $import_file['import_preview_image_url'] ?>"
+												alt="">
+											</div>
+											<a target="_blank" <?php
+											if(!$is_comming_soon){
+												echo 'href="'.$import_file['demo_url'].'"';
+											}
+											?> 
+											style="text-decoration: none;"
+											class="more-details"><?php
+											if($is_comming_soon){
+												esc_html_e( 'Comming Soon', 'century-toolkit' ); 
+											}else{
+												esc_html_e( 'Live Preview', 'century-toolkit' ); 
+											}
+											?>
+										</a>
+										<div class="theme-author">
+											<?php esc_html_e( 'By ThemeCentury', 'century-toolkit' ); ?>
+										</div>
 
-                </div>
+										<div class="theme-id-container">
 
-			<?php elseif ( 0 < count( $this->import_files ) ) : ?>
-
-                <div class="TCY__multi-select-import">
-
-                    <h2><?php esc_html_e( 'Choose which demo you want to import:', 'century-toolkit' ); ?></h2>
-
-                    <div class="theme-browser rendered">
-                        <div class="themes wp-clearfix">
-
-							<?php
-							//delete_option( 'themecentury_themes');
-							$installed_demos = get_option( 'themecentury_themes', array() );
-							foreach ( $this->import_files as $index => $import_file ) :
-								$is_installed = false;
-
-								$import_file_name = isset( $import_file['import_file_name'] ) ? $import_file['import_file_name'] : '';
-
-								if ( in_array( $import_file_name, $installed_demos ) ) {
-									$is_installed = true;
-								}
-
-
-								?>
-
-                                <div class="theme <?php echo $is_installed ? 'active' : '' ?>">
-
-                                    <div class="theme-screenshot">
-                                        <img src="<?php echo $import_file['import_preview_image_url'] ?>"
-                                             alt="">
-                                    </div>
-
-
-                                    <a target="_blank" href="<?php echo $import_file['demo_url'] ?>"
-                                       style="text-decoration: none;"
-                                       class="more-details"><?php esc_html_e( 'Live Preview', 'century-toolkit' ); ?></a>
-                                    <div class="theme-author">
-										<?php esc_html_e( 'By ThemeCentury', 'century-toolkit' ); ?>
-                                    </div>
-
-                                    <div class="theme-id-container">
-
-                                        <h2 class="theme-name"><?php
+											<h2 class="theme-name"><?php
 											if ( $is_installed ) {
 
 												echo '<b>Imported</b> : ';
 											}
 											echo $import_file['import_file_name'] ?></h2>
-
-                                        <div class="theme-actions">
 											<?php
-											$href = '';
-											if ( $is_installed ) {
-
-												$href = ' href="' . $import_file['demo_url'] . '" target="_blank"';
-											}
-
-											?>
-                                            <a <?php echo $href; ?>
-                                                    class="button button-primary <?php echo ! $is_installed ? 'load-customize hide-if-no-customize jsthemecenturyimport-data ' : ''; ?>"
-                                                    data-index="<?php echo $index; ?>">
-												<?php
-												if ( ! $is_installed ) {
-													esc_html_e( 'Import Demo', 'century-toolkit' );
-												} else {
-													esc_html_e( 'Live Preview', 'century-toolkit' );
-												}
+											if(!$is_comming_soon){ 
 												?>
-                                            </a>
+												<div class="theme-actions">
+													<?php
+													$href = '';
+													if ( $is_installed ) {
 
-                                        </div>
-                                    </div>
+														$href = ' href="' . $import_file['demo_url'] . '" target="_blank"';
+													}
+													?>
+													<a <?php echo $href; ?>
+													class="button button-primary <?php echo ! $is_installed ? 'load-customize hide-if-no-customize jsthemecenturyimport-data ' : ''; ?>"
+													data-index="<?php echo $index; ?>">
+													<?php
+													if ( ! $is_installed ) {
+														esc_html_e( 'Import Demo', 'century-toolkit' );
+													}else{
+														esc_html_e( 'Live Preview', 'century-toolkit' );
+													}
+													?>
+												</a>
 
-
-                                </div>
-
-
+											</div>
+											<?php
+										} 
+										?>
+									</div>
+								</div>
 							<?php endforeach; ?>
-                        </div>
-                    </div>
+						</div>
+					</div>
 					<?php
 					// Check if at least one preview image is defined, so we can prepare the structure for display.
 					$preview_image_is_defined = false;
@@ -258,51 +266,38 @@ class TCY_Main{
 					if ( $preview_image_is_defined ) :
 						?>
 
-                        <div class="TCY__demo-import-preview-container">
+						<div class="TCY__demo-import-preview-container">
 
-                            <p><?php esc_html_e( 'Import preview:', 'century-toolkit' ); ?></p>
+							<p><?php esc_html_e( 'Import preview:', 'century-toolkit' ); ?></p>
 
-                            <p class="TCY__demo-import-preview-image-message  jsthemecenturypreview-image-message"><?php
-								if ( ! isset( $this->import_files[0]['import_preview_image_url'] ) ) {
-									esc_html_e( 'No preview image defined for this import.', 'century-toolkit' );
-								}
+							<p class="TCY__demo-import-preview-image-message  jsthemecenturypreview-image-message"><?php
+							if ( ! isset( $this->import_files[0]['import_preview_image_url'] ) ) {
+								esc_html_e( 'No preview image defined for this import.', 'century-toolkit' );
+							}
 								// Leave the img tag below and the p tag above available for later changes via JS.
-								?></p>
-
-                            <img id="TCY__demo-import-preview-image" class="jsthemecenturypreview-image"
-                                 src="<?php echo ! empty( $this->import_files[0]['import_preview_image_url'] ) ? esc_url( $this->import_files[0]['import_preview_image_url'] ) : ''; ?>">
-
-                        </div>
-
+							?></p>
+							<img id="TCY__demo-import-preview-image" class="jsthemecenturypreview-image"
+							src="<?php echo ! empty( $this->import_files[0]['import_preview_image_url'] ) ? esc_url( $this->import_files[0]['import_preview_image_url'] ) : ''; ?>">
+						</div>
 					<?php endif; ?>
-
-                </div>
-
+				</div>
 			<?php endif; ?>
-
 			<?php if ( empty( $this->import_files ) ) : ?>
-                <p></p>
-                <button class="no-data-exists button button-primary load-customize hide-if-no-customize jsthemecenturyimport-data"><?php esc_html_e( 'Import Demo Content', 'century-toolkit' ); ?></button>
-                <p></p>
-                <p class="mg-no-data"></p>
-
-
+				<p></p>
+				<button class="no-data-exists button button-primary load-customize hide-if-no-customize jsthemecenturyimport-data"><?php esc_html_e( 'Import Demo Content', 'century-toolkit' ); ?></button>
+				<p></p>
+				<p class="mg-no-data"></p>
 			<?php endif; ?>
-            <p><?php esc_html_e( 'Click the Import Demo button once and wait. The import process may take few minutes.', 'century-toolkit' ); ?></p>
-        </div>
-
+			<p><?php esc_html_e( 'Click the Import Demo button once and wait. The import process may take few minutes.', 'century-toolkit' ); ?></p>
+		</div>
 		<?php
 	}
-
-
 	/**
 	 * Enqueue admin scripts (JS and CSS)
 	 *
 	 * @param string $hook holds info on which admin page you are currently loading.
 	 */
-	public function admin_enqueue_scripts(
-		$hook
-	) {
+	public function admin_enqueue_scripts( $hook ) {
 
 		// Enqueue the scripts only on the plugin page.
 		if ( $this->plugin_page === $hook ) {
@@ -338,18 +333,6 @@ class TCY_Main{
 	 */
 	public function import_demo_data_ajax_callback() {
 
-		/*
-				$action = 'mg-after-demo-content-import';
-				//if ( ( false !== has_action( $action ) ) && empty( $this->frontend_error_messages ) ) {
-
-				// Run the after_import action to setup other settings.
-				$this->selected_index = empty( $_POST['selected'] ) ? 0 : absint( $_POST['selected'] );
-
-				$this->do_import_action( $action, $this->import_files[ $this->selected_index ] );
-
-				exit;*/
-		// Remove all above
-
 		// Try to update PHP memory limit (so that it does not run out of it).
 		ini_set( 'memory_limit', apply_filters( 'century-toolkit/import_memory_limit', '350M' ) );
 
@@ -378,7 +361,7 @@ class TCY_Main{
 
 			/**
 			 * 1. Prepare import files.
-			 * Manually uploaded import files or predefined import files via filter: mg-demo-content-import
+			 * Manually uploaded import files or predefined import files via filter: cty-tolkit-demo-content-import
 			 */
 			if ( ! empty( $_FILES ) ) { // Using manual file uploads?
 
@@ -387,7 +370,7 @@ class TCY_Main{
 
 				// Set the name of the import files, because we used the uploaded files.
 				$this->import_files[ $this->selected_index ]['import_file_name'] = esc_html__( 'Manually uploaded files', 'century-toolkit' );
-			} elseif ( ! empty( $this->import_files[ $this->selected_index ] ) ) { // Use predefined import files from wp filter: mg-demo-content-import.
+			} elseif ( ! empty( $this->import_files[ $this->selected_index ] ) ) { // Use predefined import files from wp filter: cty-tolkit-demo-content-import.
 
 				// Download the import files (content and widgets files) and save it to variable for later use.
 				$this->selected_import_files = TCY_Helpers::download_import_files(
@@ -441,21 +424,23 @@ class TCY_Main{
 		/**
 		 * 4. Import widgets.
 		 */
-		if ( ! empty( $this->selected_import_files['widgets'] ) && empty( $this->frontend_error_messages ) ) {
+		//&& empty( $this->frontend_error_messages )
+		if ( ! empty( $this->selected_import_files['widgets'] ) ) {
 			$this->import_widgets( $this->selected_import_files['widgets'] );
 		}
 
 		/**
 		 * 5. Import customize options.
 		 */
-		if ( ! empty( $this->selected_import_files['customizer'] ) && empty( $this->frontend_error_messages ) ) {
+		//&& empty( $this->frontend_error_messages )
+		if ( ! empty( $this->selected_import_files['customizer'] )  ) {
 			$this->import_customizer( $this->selected_import_files['customizer'] );
 		}
 
 		/**
 		 * 6. After import setup.
 		 */
-		$action = 'mg-after-demo-content-import';
+		$action = 'cty-after-demo-content-import';
 		//if ( ( false !== has_action( $action ) ) && empty( $this->frontend_error_messages ) ) {
 
 		// Run the after_import action to setup other settings.
@@ -488,10 +473,7 @@ class TCY_Main{
 	 *
 	 * @param string $import_file_path path to the import file.
 	 */
-	private
-	function import_content(
-		$import_file_path
-	) {
+	private function import_content( $import_file_path ) {
 
 		$this->microtime = microtime( true );
 
@@ -500,7 +482,7 @@ class TCY_Main{
 		// Also this function has no effect when PHP is running in safe mode
 		// http://php.net/manual/en/function.set-time-limit.php.
 		// Increase PHP max execution time.
-		set_time_limit( apply_filters( 'century-toolkit/set_time_limit_for_demo_data_import', 300 ) );
+		set_time_limit( apply_filters( 'century-toolkit/set_time_limit_for_demo_data_import', 3000 ) );
 
 		// Disable import of authors.
 		add_filter( 'wxr_importer.pre_process.user', '__return_false' );
@@ -536,6 +518,7 @@ class TCY_Main{
 
 		// Return any error messages for the front page output (errors, critical, alert and emergency level messages only).
 		return $this->logger->error_output;
+
 	}
 
 
@@ -544,10 +527,7 @@ class TCY_Main{
 	 *
 	 * @param string $widget_import_file_path path to the widget import file.
 	 */
-	private
-	function import_widgets(
-		$widget_import_file_path
-	) {
+	private function import_widgets($widget_import_file_path) {
 
 		// Widget import results.
 		$results = array();
@@ -591,10 +571,7 @@ class TCY_Main{
 	 *
 	 * @param string $customizer_import_file_path path to the customizer import file.
 	 */
-	private
-	function import_customizer(
-		$customizer_import_file_path
-	) {
+	private function import_customizer( $customizer_import_file_path ) {
 
 		// Try to import the customizer settings.
 		$results = TCY_Importer_Customizer_Importer::import_customizer_options( $customizer_import_file_path );
@@ -669,7 +646,7 @@ class TCY_Main{
 
 			// Add message to log file.
 			$log_added = TCY_Helpers::append_to_file(
-				__( 'Completed AJAX call number: ', 'century-toolkit' ) . $this->ajax_call_number . PHP_EOL . $message,
+				esc_html__( 'Completed AJAX call number: ', 'century-toolkit' ) . $this->ajax_call_number . PHP_EOL . $message,
 				$this->log_file_path,
 				''
 			);
@@ -688,8 +665,7 @@ class TCY_Main{
 	/**
 	 * Set current state of the content importer, so we can continue the import with new AJAX request.
 	 */
-	private
-	function set_importer_data() {
+	private function set_importer_data() {
 		$data = array(
 			'frontend_error_messages' => $this->frontend_error_messages,
 			'ajax_call_number'        => $this->ajax_call_number,
@@ -725,11 +701,10 @@ class TCY_Main{
 	/**
 	 * Get data from filters, after the theme has loaded and instantiate the importer.
 	 */
-	public
-	function setup_plugin_with_filter_data() {
+	public function setup_plugin_with_filter_data() {
 
 		// Get info of import data files and filter it.
-		$this->import_files = TCY_Helpers::validate_import_file_info( apply_filters( 'mg-demo-content-import', array() ) );
+		$this->import_files = TCY_Helpers::validate_import_file_info( apply_filters( 'cty-tolkit-demo-content-import', array() ) );
 
 		// Importer options array.
 		$importer_options = apply_filters( 'century-toolkit/importer_options', array(
