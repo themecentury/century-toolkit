@@ -1,14 +1,13 @@
 /* jshint node:true */
 module.exports = function (grunt) {
     'use strict';
-
     grunt.initConfig({
-
         // Setting folder templates.
         dirs: {
-            js: 'assets/admin/js',
-            css: 'assets/admin/css',
-            scss: 'assets/admin/scss',
+            js: 'assets/js',
+            css: 'assets/css',
+            scss: 'assets/scss',
+            img: 'assets/img',
         },
 
         // JavaScript linting with JSHint.
@@ -17,7 +16,7 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             },
             all: [
-                'Gruntfile.js',
+                '!Gruntfile.js',
                 '<%= dirs.js %>/*.js',
                 '!<%= dirs.js %>/*.min.js',
                 '<%= dirs.js %>/*.js',
@@ -40,11 +39,14 @@ module.exports = function (grunt) {
             options: {
                 ie8: true,
                 parse: {
-                    strict: false
+                    strict: false,
                 },
                 output: {
                     comments: /@license|@preserve|^!/
-                }
+                },
+                mangle: {
+                    properties: false,
+                },
             },
             assets: {
                 files: [{
@@ -56,23 +58,17 @@ module.exports = function (grunt) {
                     ],
                     dest: '<%= dirs.js %>/',
                     ext: '.min.js'
-                }]
+                }],
             },
-            vendor: {
-                files: {
-                    '<%= dirs.js %>/jquery-blockui/jquery.jquery.blockUI.min.js': ['<%= dirs.js %>/jquery-blockui/jquery.jquery.blockUI.js'],
-                    '<%= dirs.js %>/jquery-tiptip/jquery.tipTip.min.js': ['<%= dirs.js %>/jquery-tiptip/jquery.tipTip.js'],
-                    '<%= dirs.js %>/select2/select2.min.js': ['<%= dirs.js %>/select2/select2.js']
-                }
-            }
         },
 
         // Compile all .scss files.
         sass: {
             options: {
                 sourceMap: true,
-                unixNewlines: true,
-                sourceMapFileInline: true,
+                // check:false,
+                // unix_newlines: true,
+                // sourceMapFileInline: true,
             },
             dist: {
                 files: [{
@@ -88,20 +84,20 @@ module.exports = function (grunt) {
         // Generate all RTL .css files
         rtlcss: {
             generate: {
+                options: {
+                    map: false,
+                    //map: {inline:false},
+                },
                 expand: true,
                 cwd: '<%= dirs.css %>',
-                src: ['*.css', '!*.rtl.css'],
+                src: ['*.min.css', '!*.min-rtl.css'],
                 dest: '<%= dirs.css %>/',
-                ext: '.rtl.css'
+                ext: '.min-rtl.css'
             }
         },
 
         // Minify all .css files.
         cssmin: {
-            options: {
-                sourceMap: true,
-                sourceMapFileInline: true,
-            },
             minify: {
                 expand: true,
                 cwd: '<%= dirs.css %>/',
@@ -121,18 +117,13 @@ module.exports = function (grunt) {
         // Watch changes for assets.
         watch: {
             css: {
-                options: {
-                    sourceMap: true,
-                    sourceMapFileInline: true,
-                },
                 files: [
                     '<%= dirs.scss %>/*.scss',
                     '<%= dirs.scss %>/**/*.scss'
 
                 ],
-                tasks: ['sass', 'postcss', 'cssmin'],
+                tasks: ['sass', 'postcss', 'cssmin', /*'rtlcss'*/],
             },
-            
             js: {
                 files: [
                     '<%= dirs.js %>/*.js',
@@ -146,20 +137,21 @@ module.exports = function (grunt) {
         makepot: {
             options: {
                 type: 'wp-plugins',
-                domainPath: 'i18n/languages/',
+                domainPath: 'languages/',
                 potHeaders: {
                     'report-msgid-bugs-to': 'themecentury@gmail.com',
-                    'last-translator': 'Theme Century <themecentury@gmail.com>',
-                    'language-team': 'LANGUAGE <themecentury@gmail.com>'
-                }
+                    'language-team': 'LANGUAGE <themecentury@gmail.com>',
+                },
+                //updatePoFiles: true,
+
             },
             dist: {
                 options: {
                     potFilename: 'century-toolkit.pot',
                     exclude: [
                         'vendor/.*'
-                        'upload/.*'
-                    ]
+                    ],
+
                 }
             }
         },
@@ -217,7 +209,7 @@ module.exports = function (grunt) {
                 processors: [
                     require('autoprefixer')({
                         browsers: [
-                        	'last 4 versions',
+                            'last 4 versions',
                             '> 0.1%',
                             'ie 8',
                             'ie 9',
@@ -250,22 +242,25 @@ module.exports = function (grunt) {
                     '!sass/**',
                     '!vendor/**',
                     '!Gruntfile.js',
+                    '!package-lock.json',
+                    '!composer.json',
                     '!package.json',
-                    '!package.json',
+                    '!assets/scss/**',
                     '!composer-lock.json',
                     '!composer.lock',
                     '!node_modules/**',
                     '!phpcs.ruleset.xml',
-                    '!upload/**',
+                    '!demo-content/**',
+                    '!*.gitignore',
                 ],
                 dest: 'century-toolkit',
                 expand: true
             }
         },
-        browserSync:{
-            dev:{
-                bsFiles:{
-                    src:[
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src: [
                         'assets/css/*.css',
                     ],
                 },
@@ -276,7 +271,7 @@ module.exports = function (grunt) {
                     },*/
                     port: 4000,
                     watchTask: true,
-                    proxy: "https://themecentury.com/downloads/century-toolkit-free-wordpress-plugin/",
+                    proxy: "localhost/themecentury/plugins/century-toolkit",
                 },
             },
         },
@@ -302,13 +297,9 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'browserSync',
         'watch',
-        //'jshint',
-        //'uglify',
-        //'css'
     ]);
 
     grunt.registerTask('js', [
-        //'jshint',
         'uglify:assets'
 
     ]);
@@ -316,9 +307,7 @@ module.exports = function (grunt) {
     grunt.registerTask('css', [
         'sass',
         'postcss',
-        'rtlcss',
         'cssmin',
-        //'concat'
     ]);
 
     grunt.registerTask('dev', [
@@ -327,11 +316,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('zip', [
-        //'dev',
         'compress'
     ]);
 
-    /*grunt.registerTask('watch', [
-        'watch',
-    ]);*/
-};
+ };

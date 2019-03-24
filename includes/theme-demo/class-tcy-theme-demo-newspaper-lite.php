@@ -28,7 +28,17 @@ class TCY_Theme_Demo_Newspaper_Lite extends TCY_Theme_Demo{
 				'demo_url'                   => $demo_url . '',
 				'is_comming_soon'			=> true,
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
-			)
+			),
+			array(
+				'import_file_name'           => esc_html__('Sports News', 'century-toolkit'),
+				'import_file_url'            => $demo_server_url . 'sports/content.xml',
+				'import_widget_file_url'     => $demo_server_url . 'sports/widgets.wie',
+				'import_customizer_file_url' => $demo_server_url . 'sports/customizer.dat',
+				'import_preview_image_url'   => $demo_server_url . 'sports/screenshot.png',
+				'demo_url'                   => $demo_url . '',
+				'is_comming_soon'			=> true,
+				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
+			),
 		);
 		return $demo_urls;
 	}

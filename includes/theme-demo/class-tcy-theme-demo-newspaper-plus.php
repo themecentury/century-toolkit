@@ -16,7 +16,7 @@ class TCY_Theme_Demo_Newspaper_Plus extends TCY_Theme_Demo {
 				'import_file_url'            => $demo_server_url . 'default/content.xml',
 				'import_widget_file_url'     => $demo_server_url . 'default/widgets.wie',
 				'import_customizer_file_url' => $demo_server_url . 'default/customizer.dat',
-				'import_preview_image_url'   => 'https://i0.wp.com/themes.svn.wordpress.org/newspaper-lite/1.0.4/screenshot.png',
+				'import_preview_image_url'   => $demo_server_url . 'default/screenshot.png',
 				'demo_url'                   => $demo_url . '',
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 			)

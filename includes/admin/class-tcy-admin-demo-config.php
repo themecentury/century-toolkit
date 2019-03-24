@@ -54,7 +54,15 @@ class TCY_Admin_Demo_Config
             'lekh' => array(
                 'theme_name' => 'Lekh',
                 'demo_class' => 'TCY_Theme_Demo_Lekh_Free',
-            )
+            ),
+            'lekh_pro' => array(
+                'theme_name' => 'Lekh Pro',
+                'demo_class' => 'TCY_Theme_Demo_Lekh_Pro',
+            ),
+            'multibusiness' => array(
+                'theme_name' => 'MultiBusiness',
+                'demo_class' => 'TCY_Theme_Demo_MultiBusiness',
+            ),
         );
         $supported_themes = apply_filters( 'century_toolkit_supported_themes', $demo_support );
         
