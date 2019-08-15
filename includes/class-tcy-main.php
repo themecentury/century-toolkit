@@ -185,11 +185,19 @@ class TCY_Main{
 										$is_installed = false;
 										$import_file_name = isset( $import_file['import_file_name'] ) ? $import_file['import_file_name'] : '';
 										$is_comming_soon = isset($import_file['is_comming_soon']) ? $import_file['is_comming_soon'] : false;
+										$is_premium_demo = isset($import_file['is_premium_demo']) ? $import_file['is_premium_demo'] : false;
+										$premium_buy_now_url = isset($import_file['premium_buy_now_url']) ? $import_file['premium_buy_now_url'] : 'https://themecentury.com';
+										
 										if ( in_array( $import_file_name, $installed_demos ) ) {
 											$is_installed = true;
 										}
 										?>
 										<div class="theme <?php echo $is_installed ? 'active' : '' ?>">
+											<?php if($is_premium_demo){ ?>
+												<div class="toolkit-pro-wrapper">
+													<span class="toolkit-is-pro">Pro</span>
+												</div>
+											<?php } ?>
 											<div class="theme-screenshot">
 												<img src="<?php echo $import_file['import_preview_image_url'] ?>"
 												alt="">
@@ -216,42 +224,47 @@ class TCY_Main{
 
 											<h2 class="theme-name"><?php
 											if ( $is_installed ) {
-
 												echo '<b>Imported</b> : ';
 											}
-											echo $import_file['import_file_name'] ?></h2>
+											echo $import_file['import_file_name'] ?>
+											</h2>
 											<?php
-											if(!$is_comming_soon){ 
+											if(!($is_comming_soon) ){ 
 												?>
 												<div class="theme-actions">
 													<?php
 													$href = '';
+													if($is_premium_demo){
+														$href = ' href="' . $premium_buy_now_url . '" target="_blank"';
+													}
 													if ( $is_installed ) {
-
 														$href = ' href="' . $import_file['demo_url'] . '" target="_blank"';
 													}
 													?>
-													<a <?php echo $href; ?>
-													class="button button-primary <?php echo ! $is_installed ? 'load-customize hide-if-no-customize jsthemecenturyimport-data ' : ''; ?>"
-													data-index="<?php echo $index; ?>">
-													<?php
-													if ( ! $is_installed ) {
-														esc_html_e( 'Import Demo', 'century-toolkit' );
-													}else{
-														esc_html_e( 'Live Preview', 'century-toolkit' );
-													}
+													<a 
+														<?php echo $href; ?>
+														class="button button-primary <?php echo ( (!$is_installed) && (!$is_premium_demo) ) ? 'load-customize hide-if-no-customize jsthemecenturyimport-data ' : ''; ?>"
+														data-index="<?php echo $index; ?>">
+														<?php
+														if($is_premium_demo){
+															esc_html_e( 'Buy Now', 'century-toolkit' );
+														}else if(! $is_installed){
+															esc_html_e( 'Import Demo', 'century-toolkit' );
+														}else{
+															esc_html_e( 'Live Preview', 'century-toolkit' );
+														}
 													?>
-												</a>
+													</a>
 
-											</div>
-											<?php
-										} 
-										?>
+												</div>
+												<?php
+											} 
+											?>
+										</div>
 									</div>
-								</div>
-							<?php endforeach; ?>
+								<?php endforeach; ?>
+							</div>
 						</div>
-					</div>
 					<?php
 					// Check if at least one preview image is defined, so we can prepare the structure for display.
 					$preview_image_is_defined = false;

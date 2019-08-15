@@ -59,6 +59,10 @@ class TCY_Admin_Demo_Config
                 'theme_name' => 'Lekh Pro',
                 'demo_class' => 'TCY_Theme_Demo_Lekh_Pro',
             ),
+            'blogmagazine' => array(
+                'theme_name' => 'BlogMagazine',
+                'demo_class' => 'TCY_Theme_Demo_BlogMagazine_Free',
+            ),
             'multibusiness' => array(
                 'theme_name' => 'MultiBusiness',
                 'demo_class' => 'TCY_Theme_Demo_MultiBusiness',

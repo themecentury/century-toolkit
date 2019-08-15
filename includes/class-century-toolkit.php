@@ -125,7 +125,7 @@ final class ThemeCentury_Demo_Importer {
 		$this->define( 'TCY_ABSPATH', dirname( TCY_TOOLKIT_FILE ) . '/' );
 		$this->define( 'TCY_PLUGIN_BASENAME', plugin_basename( TCY_TOOLKIT_FILE ) );
 		$this->define( 'TCY_VERSION', $this->version );
-		$this->define( 'MIRRORGRID_TOOLKIT_VERSION', $this->version );
+		$this->define( 'CENTURY_TOOLKIT_VERSION', $this->version );
 		$this->define( 'TCY_LOG_DIR', $upload_dir['basedir'] . '/mg-logs/' );
 	}
 

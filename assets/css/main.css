@@ -99,3 +99,56 @@
 	visibility: visible;
 	margin-bottom: 6px;
 }
+
+
+.toolkit-pro-wrapper{
+	right: -10px;
+	top: -10px;
+	height: 100px;
+	width: 100px;
+	z-index: 1;
+	overflow: hidden;
+	position: absolute;
+}
+
+.toolkit-pro-wrapper:before,
+.toolkit-pro-wrapper:after{
+	width: 0px;
+	height: 0px;
+	content: "";
+	display: block;
+	position: absolute;
+	border-left: 10px solid #458307;
+	border-top: 10px solid rgba(197, 0, 0, 0);
+}
+.toolkit-pro-wrapper:after{
+    right: 0;
+    bottom: 0;
+}
+.toolkit-is-pro{
+	top: 17px;
+	z-index: 1;
+	left: 50%;
+	color: #fff;
+	height: 34px;
+	width: 142%;
+	position: relative;
+	line-height: 34px;
+	display: inline-block;
+	font-weight: 700;
+	padding: 0 15px;
+	position: absolute;
+	text-align: center;
+	letter-spacing: 1px;
+	background-color: #ff0000;
+	-webkit-transform: rotate(45deg) translateX(-50%);
+	-moz-transform: rotate(45deg) translateX(-50%);
+	-ms-transform: rotate(45deg) translateX(-50%);
+	-o-transform: rotate(45deg) translateX(-50%);
+	transform: rotate(45deg) translateX(-50%);
+	-webkit-transform-origin: 0 100%;
+	-moz-transform-origin: 0 100%;
+	-ms-transform-origin: 0 100%;
+	-o-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
