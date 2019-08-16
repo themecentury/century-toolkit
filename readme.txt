@@ -44,6 +44,7 @@ If you are using our official theme then no need to worry about demo content, ju
 
 = 1.0.3 - 2019/08/15 =
 * Added: demo updated
+* Added: Free and Pro demo options added
 
 = 1.0.2 - 2019/03/24 =
 * Added: Importer for Lekh theme
