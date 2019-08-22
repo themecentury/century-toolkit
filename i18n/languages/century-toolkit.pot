@@ -2,9 +2,9 @@
 # This file is distributed under the GPL3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Century ToolKit 1.0.2\n"
+"Project-Id-Version: Century ToolKit 1.0.4\n"
 "Report-Msgid-Bugs-To: themecentury@gmail.com\n"
-"POT-Creation-Date: 2019-03-24 11:00:00+00:00\n"
+"POT-Creation-Date: 2019-08-22 05:24:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,9 +14,6 @@ msgstr ""
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
 #: includes/admin/class-tcy-admin.php:36
-#: upload/tags/1.0.0/includes/admin/class-tcy-admin.php:36
-#: upload/tags/1.0.1/includes/admin/class-tcy-admin.php:36
-#: upload/trunk/includes/admin/class-tcy-admin.php:36
 msgid ""
 "The %2$sCentury ToolKit%3$s plugin requires %2$sPHP 5.3.2+%3$s to run "
 "properly. Please contact your hosting company and ask them to update the "
@@ -25,63 +22,36 @@ msgid ""
 msgstr ""
 
 #: includes/class-century-toolkit.php:62 includes/class-century-toolkit.php:71
-#: upload/tags/1.0.0/includes/class-century-toolkit.php:62
-#: upload/tags/1.0.0/includes/class-century-toolkit.php:71
-#: upload/tags/1.0.1/includes/class-century-toolkit.php:62
-#: upload/tags/1.0.1/includes/class-century-toolkit.php:71
-#: upload/trunk/includes/class-century-toolkit.php:62
-#: upload/trunk/includes/class-century-toolkit.php:71
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:73
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:73
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:73
-#: upload/trunk/includes/class-tcy-helpers.php:73
 msgid "\"import_file_url\" or \"local_import_file\" for %s%s%s are not defined!"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:177
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:177
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:177
-#: upload/trunk/includes/class-tcy-helpers.php:177
 msgid "URL for %s%s%s file is not defined!"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:199
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:199
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:199
-#: upload/trunk/includes/class-tcy-helpers.php:199
 msgid ""
 "An error occurred while fetching %s%s%s file from the server!%sReason: %s - "
 "%s."
 msgstr ""
 
 #: includes/class-tcy-helpers.php:240 includes/class-tcy-helpers.php:285
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:240
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:285
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:240
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:285
-#: upload/trunk/includes/class-tcy-helpers.php:240
-#: upload/trunk/includes/class-tcy-helpers.php:285
 msgid ""
 "An error occurred while writing file to your server! Tried to write a file "
 "to: %s%s."
 msgstr ""
 
 #: includes/class-tcy-helpers.php:321
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:321
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:321
-#: upload/trunk/includes/class-tcy-helpers.php:321
 msgid ""
 "An error occurred while reading a file from your server! Tried reading file "
 "from path: %s%s."
 msgstr ""
 
 #: includes/class-tcy-helpers.php:345
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:345
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:345
-#: upload/trunk/includes/class-tcy-helpers.php:345
 msgid ""
 "This WordPress page does not have %sdirect%s write file access. This plugin "
 "needs it in order to save the demo import xml file to the upload directory "
@@ -89,55 +59,34 @@ msgid ""
 msgstr ""
 
 #: includes/class-tcy-helpers.php:356
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:356
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:356
-#: upload/trunk/includes/class-tcy-helpers.php:356
 msgid "ThemeCentury Demo Import"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:357
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:357
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:357
-#: upload/trunk/includes/class-tcy-helpers.php:357
 msgid "Import Demo Data"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:369
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:369
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:369
-#: upload/trunk/includes/class-tcy-helpers.php:369
 msgid ""
 "An error occurred while retrieving reading/writing permissions to your "
 "server (could not retrieve WP filesystem credentials)!"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:377
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:377
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:377
-#: upload/trunk/includes/class-tcy-helpers.php:377
 msgid "Your WordPress login credentials don't allow to use WP_Filesystem!"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:444
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:444
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:444
-#: upload/trunk/includes/class-tcy-helpers.php:444
 msgid "ThemeCentury Demo Import - "
 msgstr ""
 
 #: includes/class-tcy-helpers.php:481
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:481
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:481
-#: upload/trunk/includes/class-tcy-helpers.php:481
 msgid ""
 "%sYour user role isn't high enough. You don't have permission to import "
 "demo data.%s"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:518
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:518
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:518
-#: upload/trunk/includes/class-tcy-helpers.php:518
 msgid ""
 "Please upload XML file for content import. If you want to import widgets or "
 "customizer settings only, please use Widget Importer & Exporter or the "
@@ -146,65 +95,32 @@ msgstr ""
 
 #: includes/class-tcy-helpers.php:520 includes/class-tcy-helpers.php:541
 #: includes/class-tcy-helpers.php:559 includes/class-tcy-helpers.php:567
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:520
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:541
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:559
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:567
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:520
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:541
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:559
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:567
-#: upload/trunk/includes/class-tcy-helpers.php:520
-#: upload/trunk/includes/class-tcy-helpers.php:541
-#: upload/trunk/includes/class-tcy-helpers.php:559
-#: upload/trunk/includes/class-tcy-helpers.php:567
 msgid "Upload files"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:537
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:537
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:537
-#: upload/trunk/includes/class-tcy-helpers.php:537
 msgid "Widget file was not uploaded. Error: %s"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:555
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:555
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:555
-#: upload/trunk/includes/class-tcy-helpers.php:555
 msgid "Customizer file was not uploaded. Error: %s"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:565
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:565
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:565
-#: upload/trunk/includes/class-tcy-helpers.php:565
 msgid "The import files were successfully uploaded!"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:583
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:583
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:583
-#: upload/trunk/includes/class-tcy-helpers.php:583
 msgid "Initial max execution time = %s"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:587
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:587
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:587
-#: upload/trunk/includes/class-tcy-helpers.php:587
 msgid ""
 "Files info:%1$sSite URL = %2$s%1$sData file = %3$s%1$sWidget file = "
 "%4$s%1$sCustomizer file = %5$s"
 msgstr ""
 
 #: includes/class-tcy-helpers.php:591 includes/class-tcy-helpers.php:592
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:591
-#: upload/tags/1.0.0/includes/class-tcy-helpers.php:592
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:591
-#: upload/tags/1.0.1/includes/class-tcy-helpers.php:592
-#: upload/trunk/includes/class-tcy-helpers.php:591
-#: upload/trunk/includes/class-tcy-helpers.php:592
 msgid "not defined!"
 msgstr ""
 
@@ -212,36 +128,21 @@ msgstr ""
 msgid "Century ToolKit"
 msgstr ""
 
-#: includes/class-tcy-main.php:63 includes/class-tcy-main.php:287
-#: upload/tags/1.0.0/includes/class-tcy-main.php:61
-#: upload/tags/1.0.0/includes/class-tcy-main.php:285
-#: upload/tags/1.0.1/includes/class-tcy-main.php:63
-#: upload/tags/1.0.1/includes/class-tcy-main.php:295
-#: upload/trunk/includes/class-tcy-main.php:63
-#: upload/trunk/includes/class-tcy-main.php:295
+#: includes/class-tcy-main.php:63 includes/class-tcy-main.php:300
 msgid "Import Demo Content"
 msgstr ""
 
 #: includes/class-tcy-main.php:90
-#: upload/tags/1.0.0/includes/class-tcy-main.php:81
-#: upload/tags/1.0.1/includes/class-tcy-main.php:90
-#: upload/trunk/includes/class-tcy-main.php:90
 msgid "Before you begin, make sure all the required plugins are activated."
 msgstr ""
 
 #: includes/class-tcy-main.php:104
-#: upload/tags/1.0.0/includes/class-tcy-main.php:95
-#: upload/tags/1.0.1/includes/class-tcy-main.php:104
-#: upload/trunk/includes/class-tcy-main.php:104
 msgid ""
 "%sWarning: your server is using %sPHP safe mode%s. This means that you "
 "might experience server timeout errors.%s"
 msgstr ""
 
 #: includes/class-tcy-main.php:121
-#: upload/tags/1.0.0/includes/class-tcy-main.php:112
-#: upload/tags/1.0.1/includes/class-tcy-main.php:121
-#: upload/trunk/includes/class-tcy-main.php:121
 msgid ""
 "Quickly import your theme's live demo content, widgets and settings. This "
 "will provide you with a basic layout to build your website and speed up the "
@@ -249,606 +150,360 @@ msgid ""
 msgstr ""
 
 #: includes/class-tcy-main.php:124
-#: upload/tags/1.0.0/includes/class-tcy-main.php:115
-#: upload/tags/1.0.1/includes/class-tcy-main.php:124
-#: upload/trunk/includes/class-tcy-main.php:124
 msgid "The following data will be imported:"
 msgstr ""
 
 #: includes/class-tcy-main.php:127
-#: upload/tags/1.0.0/includes/class-tcy-main.php:118
-#: upload/tags/1.0.1/includes/class-tcy-main.php:127
-#: upload/trunk/includes/class-tcy-main.php:127
 msgid "Posts"
 msgstr ""
 
 #: includes/class-tcy-main.php:128
-#: upload/tags/1.0.0/includes/class-tcy-main.php:119
-#: upload/tags/1.0.1/includes/class-tcy-main.php:128
-#: upload/trunk/includes/class-tcy-main.php:128
 msgid "Pages"
 msgstr ""
 
 #: includes/class-tcy-main.php:129
-#: upload/tags/1.0.0/includes/class-tcy-main.php:120
-#: upload/tags/1.0.1/includes/class-tcy-main.php:129
-#: upload/trunk/includes/class-tcy-main.php:129
 msgid "Images"
 msgstr ""
 
 #: includes/class-tcy-main.php:130
-#: upload/tags/1.0.0/includes/class-tcy-main.php:121
-#: upload/tags/1.0.1/includes/class-tcy-main.php:130
-#: upload/trunk/includes/class-tcy-main.php:130
 msgid "Widgets"
 msgstr ""
 
 #: includes/class-tcy-main.php:131
-#: upload/tags/1.0.0/includes/class-tcy-main.php:122
-#: upload/tags/1.0.1/includes/class-tcy-main.php:131
-#: upload/trunk/includes/class-tcy-main.php:131
 msgid "Menus"
 msgstr ""
 
 #: includes/class-tcy-main.php:132
-#: upload/tags/1.0.0/includes/class-tcy-main.php:123
-#: upload/tags/1.0.1/includes/class-tcy-main.php:132
-#: upload/trunk/includes/class-tcy-main.php:132
 msgid "Settings"
 msgstr ""
 
 #: includes/class-tcy-main.php:136
-#: upload/tags/1.0.0/includes/class-tcy-main.php:127
-#: upload/tags/1.0.1/includes/class-tcy-main.php:136
-#: upload/trunk/includes/class-tcy-main.php:136
 msgid "NOTE: Your existing content will NOT be deleted or modified."
 msgstr ""
 
 #: includes/class-tcy-main.php:152
-#: upload/tags/1.0.0/includes/class-tcy-main.php:143
-#: upload/tags/1.0.1/includes/class-tcy-main.php:152
-#: upload/trunk/includes/class-tcy-main.php:152
 msgid "Manually upload the demo files"
 msgstr ""
 
 #: includes/class-tcy-main.php:156
-#: upload/tags/1.0.0/includes/class-tcy-main.php:147
-#: upload/tags/1.0.1/includes/class-tcy-main.php:156
-#: upload/trunk/includes/class-tcy-main.php:156
 msgid "Choose a XML file for content import:"
 msgstr ""
 
 #: includes/class-tcy-main.php:163
-#: upload/tags/1.0.0/includes/class-tcy-main.php:154
-#: upload/tags/1.0.1/includes/class-tcy-main.php:163
-#: upload/trunk/includes/class-tcy-main.php:163
 msgid "Choose a WIE or JSON file for widget import:"
 msgstr ""
 
 #: includes/class-tcy-main.php:164 includes/class-tcy-main.php:172
-#: upload/tags/1.0.0/includes/class-tcy-main.php:155
-#: upload/tags/1.0.0/includes/class-tcy-main.php:162
-#: upload/tags/1.0.1/includes/class-tcy-main.php:164
-#: upload/tags/1.0.1/includes/class-tcy-main.php:171
-#: upload/trunk/includes/class-tcy-main.php:164
-#: upload/trunk/includes/class-tcy-main.php:171
 msgid "(*optional)"
 msgstr ""
 
 #: includes/class-tcy-main.php:171
-#: upload/tags/1.0.0/includes/class-tcy-main.php:161
-#: upload/tags/1.0.1/includes/class-tcy-main.php:170
-#: upload/trunk/includes/class-tcy-main.php:170
 msgid "Choose a DAT file for customizer import:"
 msgstr ""
 
 #: includes/class-tcy-main.php:178
-#: upload/tags/1.0.0/includes/class-tcy-main.php:172
-#: upload/tags/1.0.1/includes/class-tcy-main.php:180
-#: upload/trunk/includes/class-tcy-main.php:180
 msgid "Choose which demo you want to import:"
 msgstr ""
 
-#: includes/class-tcy-main.php:205
-#: upload/tags/1.0.1/includes/class-tcy-main.php:207
-#: upload/trunk/includes/class-tcy-main.php:207
+#: includes/class-tcy-main.php:213
 msgid "Comming Soon"
 msgstr ""
 
-#: includes/class-tcy-main.php:207 includes/class-tcy-main.php:241
-#: upload/tags/1.0.0/includes/class-tcy-main.php:202
-#: upload/tags/1.0.0/includes/class-tcy-main.php:232
-#: upload/tags/1.0.1/includes/class-tcy-main.php:209
-#: upload/tags/1.0.1/includes/class-tcy-main.php:243
-#: upload/trunk/includes/class-tcy-main.php:209
-#: upload/trunk/includes/class-tcy-main.php:243
+#: includes/class-tcy-main.php:215 includes/class-tcy-main.php:254
 msgid "Live Preview"
 msgstr ""
 
-#: includes/class-tcy-main.php:212
-#: upload/tags/1.0.0/includes/class-tcy-main.php:204
-#: upload/tags/1.0.1/includes/class-tcy-main.php:214
-#: upload/trunk/includes/class-tcy-main.php:214
+#: includes/class-tcy-main.php:220
 msgid "By ThemeCentury"
 msgstr ""
 
-#: includes/class-tcy-main.php:239
-#: upload/tags/1.0.0/includes/class-tcy-main.php:230
-#: upload/tags/1.0.1/includes/class-tcy-main.php:241
-#: upload/trunk/includes/class-tcy-main.php:241
+#: includes/class-tcy-main.php:250
+msgid "Buy Now"
+msgstr ""
+
+#: includes/class-tcy-main.php:252
 msgid "Import Demo"
 msgstr ""
 
-#: includes/class-tcy-main.php:271
-#: upload/tags/1.0.0/includes/class-tcy-main.php:263
-#: upload/tags/1.0.1/includes/class-tcy-main.php:273
-#: upload/trunk/includes/class-tcy-main.php:273
+#: includes/class-tcy-main.php:284
 msgid "Import preview:"
 msgstr ""
 
-#: includes/class-tcy-main.php:275 includes/class-tcy-main.php:315
-#: upload/tags/1.0.0/includes/class-tcy-main.php:267
-#: upload/tags/1.0.0/includes/class-tcy-main.php:320
-#: upload/tags/1.0.1/includes/class-tcy-main.php:277
-#: upload/tags/1.0.1/includes/class-tcy-main.php:330
-#: upload/trunk/includes/class-tcy-main.php:277
-#: upload/trunk/includes/class-tcy-main.php:330
+#: includes/class-tcy-main.php:288 includes/class-tcy-main.php:328
 msgid "No preview image defined for this import."
 msgstr ""
 
-#: includes/class-tcy-main.php:291
-#: upload/tags/1.0.0/includes/class-tcy-main.php:291
-#: upload/tags/1.0.1/includes/class-tcy-main.php:301
-#: upload/trunk/includes/class-tcy-main.php:301
+#: includes/class-tcy-main.php:304
 msgid ""
 "Click the Import Demo button once and wait. The import process may take few "
 "minutes."
 msgstr ""
 
-#: includes/class-tcy-main.php:372
-#: upload/tags/1.0.0/includes/class-tcy-main.php:389
-#: upload/tags/1.0.1/includes/class-tcy-main.php:387
-#: upload/trunk/includes/class-tcy-main.php:387
+#: includes/class-tcy-main.php:385
 msgid "Manually uploaded files"
 msgstr ""
 
-#: includes/class-tcy-main.php:388 includes/class-tcy-main.php:399
-#: upload/tags/1.0.0/includes/class-tcy-main.php:405
-#: upload/tags/1.0.0/includes/class-tcy-main.php:416
-#: upload/tags/1.0.1/includes/class-tcy-main.php:403
-#: upload/tags/1.0.1/includes/class-tcy-main.php:414
-#: upload/trunk/includes/class-tcy-main.php:403
-#: upload/trunk/includes/class-tcy-main.php:414
+#: includes/class-tcy-main.php:401 includes/class-tcy-main.php:412
 msgid "Downloaded files"
 msgstr ""
 
-#: includes/class-tcy-main.php:395
-#: upload/tags/1.0.0/includes/class-tcy-main.php:412
-#: upload/tags/1.0.1/includes/class-tcy-main.php:410
-#: upload/trunk/includes/class-tcy-main.php:410
+#: includes/class-tcy-main.php:408
 msgid "The import files for: %s were successfully downloaded!"
 msgstr ""
 
-#: includes/class-tcy-main.php:404
-#: upload/tags/1.0.0/includes/class-tcy-main.php:421
-#: upload/tags/1.0.1/includes/class-tcy-main.php:419
-#: upload/trunk/includes/class-tcy-main.php:419
+#: includes/class-tcy-main.php:417
 msgid "No import files specified!"
 msgstr ""
 
-#: includes/class-tcy-main.php:453
-#: upload/tags/1.0.0/includes/class-tcy-main.php:468
-#: upload/tags/1.0.1/includes/class-tcy-main.php:468
-#: upload/trunk/includes/class-tcy-main.php:468
+#: includes/class-tcy-main.php:466
 msgid ""
 "The demo import has finished. Please check your page and make sure that "
 "everything has imported correctly."
 msgstr ""
 
-#: includes/class-tcy-main.php:458
-#: upload/tags/1.0.0/includes/class-tcy-main.php:473
-#: upload/tags/1.0.1/includes/class-tcy-main.php:473
-#: upload/trunk/includes/class-tcy-main.php:473
+#: includes/class-tcy-main.php:471
 msgid ""
 "The demo import has finished, but there were some import errors.%s More "
 "details about the errors can be found in this %s %slog file%s %s."
 msgstr ""
 
-#: includes/class-tcy-main.php:510
-#: upload/tags/1.0.0/includes/class-tcy-main.php:528
-#: upload/tags/1.0.1/includes/class-tcy-main.php:525
-#: upload/trunk/includes/class-tcy-main.php:525
+#: includes/class-tcy-main.php:523
 msgid "Max execution time after content import = "
 msgstr ""
 
-#: includes/class-tcy-main.php:512
-#: upload/tags/1.0.0/includes/class-tcy-main.php:530
-#: upload/tags/1.0.1/includes/class-tcy-main.php:527
-#: upload/trunk/includes/class-tcy-main.php:527
+#: includes/class-tcy-main.php:525
 msgid "Importing content"
 msgstr ""
 
-#: includes/class-tcy-main.php:552 includes/class-tcy-main.php:564
-#: upload/tags/1.0.0/includes/class-tcy-main.php:572
-#: upload/tags/1.0.0/includes/class-tcy-main.php:584
-#: upload/tags/1.0.1/includes/class-tcy-main.php:567
-#: upload/tags/1.0.1/includes/class-tcy-main.php:579
-#: upload/trunk/includes/class-tcy-main.php:567
-#: upload/trunk/includes/class-tcy-main.php:579
+#: includes/class-tcy-main.php:565 includes/class-tcy-main.php:577
 msgid "Importing widgets"
 msgstr ""
 
-#: includes/class-tcy-main.php:586 includes/class-tcy-main.php:594
-#: upload/tags/1.0.0/includes/class-tcy-main.php:609
-#: upload/tags/1.0.0/includes/class-tcy-main.php:617
-#: upload/tags/1.0.1/includes/class-tcy-main.php:601
-#: upload/tags/1.0.1/includes/class-tcy-main.php:609
-#: upload/trunk/includes/class-tcy-main.php:601
-#: upload/trunk/includes/class-tcy-main.php:609
+#: includes/class-tcy-main.php:599 includes/class-tcy-main.php:607
 msgid "Importing customizer settings"
 msgstr ""
 
-#: includes/class-tcy-main.php:592
-#: upload/tags/1.0.0/includes/class-tcy-main.php:615
-#: upload/tags/1.0.1/includes/class-tcy-main.php:607
-#: upload/trunk/includes/class-tcy-main.php:607
+#: includes/class-tcy-main.php:605
 msgid "Customizer settings import finished!"
 msgstr ""
 
-#: includes/class-tcy-main.php:649
-#: upload/tags/1.0.0/includes/class-tcy-main.php:672
-#: upload/tags/1.0.1/includes/class-tcy-main.php:664
-#: upload/trunk/includes/class-tcy-main.php:664
+#: includes/class-tcy-main.php:662
 msgid "Completed AJAX call number: "
 msgstr ""
 
 #: includes/importer/class-tcy-importer-customizer-importer.php:33
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-customizer-importer.php:33
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-customizer-importer.php:33
-#: upload/trunk/includes/importer/class-tcy-importer-customizer-importer.php:33
 msgid "The customizer import file is missing! File path: %s"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-customizer-importer.php:53
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-customizer-importer.php:53
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-customizer-importer.php:53
-#: upload/trunk/includes/importer/class-tcy-importer-customizer-importer.php:53
 msgid ""
 "The customizer import file is not in a correct format. Please make sure to "
 "use the correct customizer import file."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-customizer-importer.php:59
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-customizer-importer.php:59
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-customizer-importer.php:59
-#: upload/trunk/includes/importer/class-tcy-importer-customizer-importer.php:59
 msgid ""
 "The customizer import file is not suitable for current theme. You can only "
 "import customizer settings for the same theme or a child theme."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:41
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:41
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:41
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:41
 msgid "Widget import file could not be found."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:73
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:73
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:73
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:73
 msgid "Widget import data could not be read. Please try a different file."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:113
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:113
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:113
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:113
 msgid "Sidebar does not exist in theme (moving widget to Inactive)"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:135
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:135
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:135
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:135
 msgid "Site does not support widget"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:170
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:170
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:170
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:170
 msgid "Widget already exists"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:228
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:228
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:228
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:228
 msgid "Imported"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:232
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:232
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:232
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:232
 msgid "Imported to Inactive"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:238
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:238
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:238
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:238
 msgid "No Title"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-widget.php:287
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-widget.php:287
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-widget.php:287
-#: upload/trunk/includes/importer/class-tcy-importer-widget.php:287
 msgid "No results for widget import!"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:132
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:132
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:132
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:132
 msgid "Could not open the file for parsing"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:168
 #: includes/importer/class-tcy-importer-wxr-importer.php:284
 #: includes/importer/class-tcy-importer-wxr-importer.php:358
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:168
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:284
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:357
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:168
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:284
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:358
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:168
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:284
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:358
 msgid ""
 "This WXR file (version %s) is newer than the importer (version %s) and may "
 "not be supported. Please consider updating."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:507
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:506
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:507
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:507
 msgid "The file does not exist, please try again."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:567
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:566
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:567
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:567
 msgid "Invalid author mapping"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:669
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:668
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:669
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:669
 msgid "Cannot import auto-draft posts"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:757
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:756
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:757
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:757
 msgid "Failed to import \"%s\": Invalid post type %s"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:768
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:767
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:768
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:768
 msgid "%s \"%s\" already exists."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:846
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:845
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:846
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:846
 msgid "Skipping attachment \"%s\", fetching attachments disabled"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:861
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:860
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:861
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:861
 msgid "Failed to import \"%s\" (%s)"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:894
 #: includes/importer/class-tcy-importer-wxr-importer.php:1723
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:893
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1722
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:894
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1723
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:894
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1723
 msgid "Imported \"%s\" (%s)"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:899
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:898
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:899
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:899
 msgid "Post %d remapped to %d"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1044
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1043
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1044
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1044
 msgid "Invalid file type"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1532
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1531
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1532
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1532
 msgid "Failed to import user \"%s\""
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1554
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1553
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1554
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1554
 msgid "Imported user \"%s\""
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1558
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1557
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1558
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1558
 msgid "User %d remapped to %d"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1698
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1697
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1698
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1698
 msgid "Failed to import %s %s"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1728
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1727
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1728
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1728
 msgid "Term %d remapped to %d"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1784
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1783
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1784
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1784
 msgid "Remote server returned %1$d %2$s for %3$s"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1798
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1797
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1798
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1798
 msgid "Remote file is incorrect size"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1804
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1803
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1804
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1804
 msgid "Zero size file downloaded"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1810
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1809
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1810
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1810
 msgid "Remote file is too large, limit is %s"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1833
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1832
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1833
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1833
 msgid "Running post-processing for post %d"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1846
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1845
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1846
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1846
 msgid "Could not find the post parent for \"%s\" (post #%d)"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1851
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1850
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1851
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1851
 msgid "Post %d was imported with parent %d, but could not be found"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1865
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1864
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1865
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1865
 msgid "Could not find the author for \"%s\" (post #%d)"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1870
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1869
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1870
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1870
 msgid "Post %d was imported with author \"%s\", but could not be found"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1896
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1895
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1896
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1896
 msgid "Post %d was marked for post-processing, but none was required."
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1907
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1906
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1907
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1907
 msgid "Could not update \"%s\" (post #%d) with mapped data"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1952
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1951
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1952
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1952
 msgid "Could not find the menu object for \"%s\" (post #%d)"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1957
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1956
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1957
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1957
 msgid ""
 "Post %d was imported with object \"%d\" of type \"%s\", but could not be "
 "found"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1979
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1978
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1979
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1979
 msgid "Could not find the comment parent for comment #%d"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1983
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1982
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1983
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1983
 msgid "Comment %d was imported with parent %d, but could not be found"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:1997
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:1996
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:1997
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:1997
 msgid "Could not find the author for comment #%d"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:2001
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:2000
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:2001
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:2001
 msgid "Comment %d was imported with author %d, but could not be found"
 msgstr ""
 
 #: includes/importer/class-tcy-importer-wxr-importer.php:2018
-#: upload/tags/1.0.0/includes/importer/class-tcy-importer-wxr-importer.php:2017
-#: upload/tags/1.0.1/includes/importer/class-tcy-importer-wxr-importer.php:2018
-#: upload/trunk/includes/importer/class-tcy-importer-wxr-importer.php:2018
 msgid "Could not update comment #%d with mapped data"
+msgstr ""
+
+#: includes/theme-demo/class-tcy-theme-demo-blogmagazine-free.php:26
+msgid "BlogMagazine - Default"
+msgstr ""
+
+#: includes/theme-demo/class-tcy-theme-demo-blogmagazine-free.php:35
+msgid "BlogMagazine - RTL"
+msgstr ""
+
+#: includes/theme-demo/class-tcy-theme-demo-blogmagazine-free.php:46
+msgid "BlogMagazine Pro - Default"
+msgstr ""
+
+#: includes/theme-demo/class-tcy-theme-demo-blogmagazine-free.php:57
+msgid "BlogMagazine Pro - Dark Mode"
 msgstr ""
 
 #: includes/theme-demo/class-tcy-theme-demo-lekh-free.php:15
@@ -868,14 +523,10 @@ msgid "MultiBusiness - Default"
 msgstr ""
 
 #: includes/theme-demo/class-tcy-theme-demo-newspaper-lite.php:14
-#: upload/tags/1.0.1/includes/theme-demo/class-tcy-theme-demo-newspaper-lite.php:14
-#: upload/trunk/includes/theme-demo/class-tcy-theme-demo-newspaper-lite.php:14
 msgid "Default News"
 msgstr ""
 
 #: includes/theme-demo/class-tcy-theme-demo-newspaper-lite.php:23
-#: upload/tags/1.0.1/includes/theme-demo/class-tcy-theme-demo-newspaper-lite.php:23
-#: upload/trunk/includes/theme-demo/class-tcy-theme-demo-newspaper-lite.php:23
 msgid "Awesome Blog"
 msgstr ""
 

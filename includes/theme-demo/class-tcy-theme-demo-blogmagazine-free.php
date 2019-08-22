@@ -32,6 +32,15 @@ class TCY_Theme_Demo_BlogMagazine_Free extends TCY_Theme_Demo{
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 			),
 			array(
+				'import_file_name'           => esc_html__('BlogMagazine - RTL', 'century-toolkit'),
+				'import_file_url'            => $demo_server_url . 'blogmagazine/arabic/content.xml',
+				'import_widget_file_url'     => $demo_server_url . 'blogmagazine/arabic/widgets.wie',
+				'import_customizer_file_url' => $demo_server_url . 'blogmagazine/arabic/customizer.dat',
+				'import_preview_image_url'   => $demo_server_url . 'blogmagazine/arabic/screenshot.png',
+				'demo_url'                   => $demo_url . 'wpthemes/blogmagazine/',
+				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
+			),
+			array(
 				'is_premium_demo'			=> $disable_premium_demo,
 				'premium_buy_now_url'		=> $buy_now_url,
 				'import_file_name'           => esc_html__('BlogMagazine Pro - Default', 'century-toolkit'),

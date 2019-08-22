@@ -3,7 +3,7 @@ Contributors: themecentury
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themecentury
 Requires at least: 4.0.0
 Tested up to: 5.2.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3 or later
 
 ToolKit for ThemeCentury themes and demo content importer for themes.
@@ -41,6 +41,9 @@ If you are using our official theme then no need to worry about demo content, ju
 
 
 == Changelog ==
+
+= 1.0.4 - 2019/08/22 =
+* Added: RTL demo updated
 
 = 1.0.3 - 2019/08/15 =
 * Added: demo updated
