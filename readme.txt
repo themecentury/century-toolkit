@@ -3,10 +3,10 @@ Contributors: themecentury
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themecentury
 Requires at least: 4.0.0
 Tested up to: 5.2.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv3 or later
 
-ToolKit for ThemeCentury themes and demo content importer for themes.
+ToolKit for WordPress themes and demo content importer for themes.
 
 == Description ==
 
@@ -41,6 +41,10 @@ If you are using our official theme then no need to worry about demo content, ju
 
 
 == Changelog ==
+
+= 1.0.5 - 2019/09/23 =
+* Updated: Lekh Demo Updated
+* Updated: Newspaper Lite and Plus Demo updated
 
 = 1.0.4 - 2019/08/22 =
 * Added: RTL demo updated
