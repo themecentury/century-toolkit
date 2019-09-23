@@ -10,7 +10,7 @@ class TCY_Theme_Demo_BlogMagazine_Free extends TCY_Theme_Demo{
 
 		$demo_server_url = 'https://raw.githubusercontent.com/themecentury/demo/master/';
 		$demo_url = 'https://demo.dinesh-ghimire.com.np/';
-		$buy_now_url = 'https://dinesh-ghimire.com.np/downloads/blogmagazine-pro-premium-wordpress-plugin/';
+		$buy_now_url = 'https://dinesh-ghimire.com.np/downloads/blogmagazine-pro-premium-wordpress-plugin/?ref=import-demo-content';
 
 		if( !function_exists('is_plugin_active') ){
 			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );

@@ -21,13 +21,12 @@ class TCY_Theme_Demo_Lekh_Free extends TCY_Theme_Demo{
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 			),
 			array(
-				'import_file_name'           => esc_html__('Fashion Blog', 'century-toolkit'),
-				'import_file_url'            => $demo_server_url . 'fashion/content.xml',
-				'import_widget_file_url'     => $demo_server_url . 'fashion/widgets.wie',
-				'import_customizer_file_url' => $demo_server_url . 'fashion/customizer.dat',
-				'import_preview_image_url'   => $demo_server_url . 'fashion/screenshot.png',
-				'demo_url'                   => $demo_url . 'lekh-fashion/',
-				'is_comming_soon'			=> true,
+				'import_file_name'           => esc_html__('Arabic (RTL)', 'century-toolkit'),
+				'import_file_url'            => $demo_server_url . 'arabic/content.xml',
+				'import_widget_file_url'     => $demo_server_url . 'arabic/widgets.wie',
+				'import_customizer_file_url' => $demo_server_url . 'arabic/customizer.dat',
+				'import_preview_image_url'   => $demo_server_url . 'arabic/screenshot.png',
+				'demo_url'                   => $demo_url . 'lekh-rtl/',
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 			)
 		);
