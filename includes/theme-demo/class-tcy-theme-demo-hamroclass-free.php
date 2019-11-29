@@ -41,7 +41,7 @@ class TCY_Theme_Demo_HamroClass_Free extends TCY_Theme_Demo{
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 			),
 			array(
-				'import_file_name'           => esc_html__('HamroClass - Magazine', 'century-toolkit'),
+				'import_file_name'           => esc_html__('HamroClass - Hamro News', 'century-toolkit'),
 				'import_file_url'            => $demo_server_url . 'hamroclass/magazine/content.xml',
 				'import_widget_file_url'     => $demo_server_url . 'hamroclass/magazine/widgets.wie',
 				'import_customizer_file_url' => $demo_server_url . 'hamroclass/magazine/customizer.dat',
