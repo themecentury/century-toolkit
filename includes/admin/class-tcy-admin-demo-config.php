@@ -59,9 +59,9 @@ class TCY_Admin_Demo_Config
                 'theme_name' => 'BlogMagazine',
                 'demo_class' => 'TCY_Theme_Demo_BlogMagazine_Free',
             ),
-            'multibusiness' => array(
-                'theme_name' => 'MultiBusiness',
-                'demo_class' => 'TCY_Theme_Demo_MultiBusiness',
+            'hamroclass' => array(
+                'theme_name' => 'HamroClass',
+                'demo_class' => 'TCY_Theme_Demo_HamroClass_Free',
             ),
         );
         $supported_themes = apply_filters( 'century_toolkit_supported_themes', $demo_support );
