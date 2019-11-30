@@ -161,15 +161,15 @@ class TCY_Theme_Demo_HamroClass_Free extends TCY_Theme_Demo{
 
 			if ( isset( $menu->term_id ) ) {
 				set_theme_mod( 'nav_menu_locations', array(
-						'primary' => $menu->term_id,
+						'hamroclass_primary_menu' => $menu->term_id,
 					)
 				);
 			}
 		}
 
 		// Assign front page and posts page (blog page).
-		$frontpage_details = get_id_by_slug( 'home' );
-		$blogpage_details  = get_id_by_slug( 'blog' );
+		$frontpage_details = get_page_by_path( 'home' );
+		$blogpage_details  = get_page_by_path( 'blog' );
 
 		update_option( 'show_on_front', 'page' );
 		if($frontpage_details){
