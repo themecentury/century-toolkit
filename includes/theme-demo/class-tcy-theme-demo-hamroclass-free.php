@@ -116,7 +116,7 @@ class TCY_Theme_Demo_HamroClass_Free extends TCY_Theme_Demo{
 			array(
 				'is_premium_demo'			=> $disable_premium_demo,
 				'premium_buy_now_url'		=> $buy_now_url,
-				'import_file_name'           => esc_html__('HamroClass Pro - EDU Magazine', 'century-toolkit'),
+				'import_file_name'           => esc_html__('HamroClass Pro - Sabko Magazine', 'century-toolkit'),
 				'import_file_url'            => $demo_server_url . 'hamroclass-pro/magazine/content.xml',
 				'import_widget_file_url'     => $demo_server_url . 'hamroclass-pro/magazine/widgets.wie',
 				'import_customizer_file_url' => $demo_server_url . 'hamroclass-pro/magazine/customizer.dat',
@@ -168,12 +168,18 @@ class TCY_Theme_Demo_HamroClass_Free extends TCY_Theme_Demo{
 		}
 
 		// Assign front page and posts page (blog page).
-		$front_page_id = get_id_by_slug( 'home' );
-		$blog_page_id  = get_id_by_slug( 'blog' );
+		$frontpage_details = get_id_by_slug( 'home' );
+		$blogpage_details  = get_id_by_slug( 'blog' );
 
 		update_option( 'show_on_front', 'page' );
-		update_option( 'page_on_front', $front_page_id->ID );
-		update_option( 'page_for_posts', $blog_page_id->ID );
+		if($frontpage_details){
+			update_option( 'page_on_front', $frontpage_details->ID );	
+		}
+
+		if($blogpage_details){
+			update_option( 'page_for_posts', $blogpage_details->ID );	
+		}
+		
 		update_option( 'themecentury_themes', $installed_demos );
 
 	}
