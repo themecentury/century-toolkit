@@ -2,8 +2,8 @@
 Contributors: themecentury
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themecentury
 Requires at least: 4.0.0
-Tested up to: 5.2.2
-Stable tag: 1.0.5
+Tested up to: 5.3
+Stable tag: 1.0.6
 License: GPLv3 or later
 
 ToolKit for WordPress themes and demo content importer for themes.
@@ -41,6 +41,9 @@ If you are using our official theme then no need to worry about demo content, ju
 
 
 == Changelog ==
+
+= 1.0.6 - 2019/09/23 =
+* Updated: HamroClass Demo Update
 
 = 1.0.5 - 2019/09/23 =
 * Updated: Lekh Demo Updated
