@@ -3,17 +3,26 @@ add_filter('century_toolkit_demos_data', 'century_toolkit_demo_data_config');
 
 function century_toolkit_demo_data_config(){
 
+    $config_data = array();
+
     $activate_theme = get_template();
+    $transient_slug = 'century_toolkit_theme_data_'.$activate_theme;
+    $config_data = get_transient( $transient_slug );
     $author_name = apply_filters( 'century_toolkit_data_author_name', 'themecentury' );
     $global_file_location = 'https://raw.githubusercontent.com/'.$author_name.'/demo/master/';
     $default_demo_path = $global_file_location.$activate_theme.'/';
     $demo_file_location = apply_filters( 'century_toolkit_demo_path', $default_demo_path, $activate_theme );
-    $request = wp_remote_get( $demo_file_location.'config.json' );
-    $json_data = wp_remote_retrieve_body($request);
-    $config_data = array();
-    if($json_data){
-        $config_data = json_decode($json_data, true );    
+
+    if(!$config_data){
+
+        $request = wp_remote_get( $demo_file_location.'config.json' );
+        $json_data = wp_remote_retrieve_body($request);
+        $config_data = ($json_data) ? json_decode($json_data, true ) : array();
+
+        set_transient( $transient_slug, $config_data, DAY_IN_SECONDS );
+
     }
+
     if(!$config_data){
         return;
     }
