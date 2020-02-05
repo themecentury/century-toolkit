@@ -13,6 +13,8 @@ project.properties
 # Upload
 /upload/
 
+/uploads/
+
 # Sass
 .sass-cache/
 
