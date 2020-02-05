@@ -1,59 +1,37 @@
 <?php
-/*
- * @description Class to import widget 
- * @package themecentury
- * @subpackage centurytoolkit
- * @since 1.0.0
+/**
+ * Class for the widget importer.
+ *
+ * Code is mostly from the Widget Importer & Exporter plugin.
+ *
+ * @see https://wordpress.org/plugins/widget-importer-exporter/
  */
-class TCY_Importer_Widget {
 
-	/**
-	 * Imports widgets from a json file.
-	 *
-	 * @param string $data_file path to json file with WordPress widget export data.
-	 */
-	public function import_widgets( $data_file ) {
-
-		// Get widgets data from file.
-		$data = $this->process_import_file( $data_file );
-
-		// Return from this function if there was an error.
-		if ( is_wp_error( $data ) ) {
-			return $data;
-		}
-
-		// Import the widget data and save the results.
-		return $this->import_data( $data );
-	}
+class Century_Toolkit_Widget_Importer {
 
 	/**
 	 * Process import file - this parses the widget data and returns it.
 	 *
 	 * @param string $file path to json file.
-	 * @return object $data decoded JSON string
+	 * @global string $widget_import_results
 	 */
-	private function process_import_file( $file ) {
+	public function process_import_file( $file ) {
 
-		// File exists?
-		if ( ! file_exists( $file ) ) {
-			return new WP_Error(
-				'widget_import_file_not_found',
-				__( 'Widget import file could not be found.', 'century-toolkit' )
-			);
-		}
-
-		// Get file contents and decode.
-		$data = TCY_Helpers::data_from_file( $file );
+		// Get file contents.
+		$data = Century_Toolkit_Demos_Helpers::get_remote( $file );
 
 		// Return from this function if there was an error.
 		if ( is_wp_error( $data ) ) {
 			return $data;
 		}
 
-		return json_decode( $data );
+		// Decode file contents.
+	    $data = json_decode( $data );
+
+		// Import the widget data
+    	return $this->import_data( $data );
+
 	}
-
-
 
 	/**
 	 * Import widget JSON data
@@ -68,15 +46,8 @@ class TCY_Importer_Widget {
 
 		// Have valid data? If no data or could not decode.
 		if ( empty( $data ) || ! is_object( $data ) ) {
-			return new WP_Error(
-				'corrupted_widget_import_data',
-				__( 'Widget import data could not be read. Please try a different file.', 'century-toolkit' )
-			);
+			return;
 		}
-
-		// Hook before import.
-		do_action( 'century-toolkit/widget_importer_before_widgets_import' );
-		$data = apply_filters( 'century-toolkit/before_widgets_import_data', $data );
 
 		// Get all available widgets site supports.
 		$available_widgets = $this->available_widgets();
@@ -110,7 +81,7 @@ class TCY_Importer_Widget {
 				$sidebar_available    = false;
 				$use_sidebar_id       = 'wp_inactive_widgets'; // Add to inactive if sidebar does not exist in theme.
 				$sidebar_message_type = 'error';
-				$sidebar_message      = __( 'Sidebar does not exist in theme (moving widget to Inactive)', 'century-toolkit' );
+				$sidebar_message      = esc_html__( 'Sidebar does not exist in theme (moving widget to Inactive)', 'century-toolkit' );
 			}
 
 			// Result for sidebar.
@@ -132,25 +103,11 @@ class TCY_Importer_Widget {
 				if ( ! $fail && ! isset( $available_widgets[ $id_base ] ) ) {
 					$fail                = true;
 					$widget_message_type = 'error';
-					$widget_message      = __( 'Site does not support widget', 'century-toolkit' ); // Explain why widget not imported.
+					$widget_message      = esc_html__( 'Site does not support widget', 'century-toolkit' ); // Explain why widget not imported.
 				}
 
-				// Filter to modify settings object before conversion to array and import.
-				// Leave this filter here for backwards compatibility with manipulating objects (before conversion to array below).
-				// Ideally the newer wie_widget_settings_array below will be used instead of this.
-				$widget = apply_filters( 'century-toolkit/widget_settings', $widget ); // Object.
-
 				// Convert multidimensional objects to multidimensional arrays.
-				// Some plugins like Jetpack Widget Visibility store settings as multidimensional arrays.
-				// Without this, they are imported as objects and cause fatal error on Widgets page.
-				// If this creates problems for plugins that do actually intend settings in objects then may need to consider other approach: https://wordpress.org/support/topic/problem-with-array-of-arrays.
-				// It is probably much more likely that arrays are used than objects, however.
 				$widget = json_decode( json_encode( $widget ), true );
-
-				// Filter to modify settings array.
-				// This is preferred over the older wie_widget_settings filter above.
-				// Do before identical check because changes may make it identical to end result (such as URL replacements).
-				$widget = apply_filters( 'century-toolkit/widget_settings_array', $widget );
 
 				// Does widget with identical settings already exist in same sidebar?
 				if ( ! $fail && isset( $widget_instances[ $id_base ] ) ) {
@@ -167,7 +124,7 @@ class TCY_Importer_Widget {
 						if ( in_array( "$id_base-$check_id", $sidebar_widgets ) && (array) $widget == $check_widget ) {
 							$fail                = true;
 							$widget_message_type = 'warning';
-							$widget_message      = __( 'Widget already exists', 'century-toolkit' ); // Explain why widget not imported.
+							$widget_message      = esc_html__( 'Widget already exists', 'century-toolkit' ); // Explain why widget not imported.
 
 							break;
 						}
@@ -221,34 +178,30 @@ class TCY_Importer_Widget {
 						'widget_id_num'     => $new_instance_id_number,
 						'widget_id_num_old' => $instance_id_number,
 					);
-					do_action( 'century-toolkit/widget_importer_after_single_widget_import', $after_widget_import );
+
 					// Success message.
 					if ( $sidebar_available ) {
 						$widget_message_type = 'success';
-						$widget_message      = __( 'Imported', 'century-toolkit' );
+						$widget_message      = esc_html__( 'Imported', 'century-toolkit' );
 					}
 					else {
 						$widget_message_type = 'warning';
-						$widget_message      = __( 'Imported to Inactive', 'century-toolkit' );
+						$widget_message      = esc_html__( 'Imported to Inactive', 'century-toolkit' );
 					}
 				}
 
 				// Result for widget instance.
 				$results[ $sidebar_id ]['widgets'][ $widget_instance_id ]['name']         = isset( $available_widgets[ $id_base ]['name'] ) ? $available_widgets[ $id_base ]['name'] : $id_base; // Widget name or ID if name not available (not supported by site).
-				$results[ $sidebar_id ]['widgets'][ $widget_instance_id ]['title']        = ! empty( $widget['title'] ) ? $widget['title'] : __( 'No Title', 'century-toolkit' ); // Show "No Title" if widget instance is untitled.
+				$results[ $sidebar_id ]['widgets'][ $widget_instance_id ]['title']        = ! empty( $widget['title'] ) ? $widget['title'] : esc_html__( 'No Title', 'century-toolkit' ); // Show "No Title" if widget instance is untitled.
 				$results[ $sidebar_id ]['widgets'][ $widget_instance_id ]['message_type'] = $widget_message_type;
 				$results[ $sidebar_id ]['widgets'][ $widget_instance_id ]['message']      = $widget_message;
 
 			}
 		}
 
-		// Hook after import.
-		do_action( 'century-toolkit/widget_importer_after_widgets_import' );
-
 		// Return results.
-		return apply_filters( 'century-toolkit/widget_import_results', $results );
+		return $results;
 	}
-
 
 	/**
 	 * Available widgets.
@@ -262,39 +215,21 @@ class TCY_Importer_Widget {
 
 		global $wp_registered_widget_controls;
 
-		$widget_controls   = $wp_registered_widget_controls;
+		$widget_controls = $wp_registered_widget_controls;
+
 		$available_widgets = array();
 
 		foreach ( $widget_controls as $widget ) {
-			if ( ! empty( $widget['id_base'] ) && ! isset( $available_widgets[ $widget['id_base'] ] ) ) {
-				$available_widgets[ $widget['id_base'] ]['id_base'] = $widget['id_base'];
-				$available_widgets[ $widget['id_base'] ]['name']    = $widget['name'];
+
+			if ( ! empty( $widget['id_base'] ) && ! isset( $available_widgets[$widget['id_base']] ) ) { // no dupes
+
+				$available_widgets[$widget['id_base']]['id_base'] 	= $widget['id_base'];
+				$available_widgets[$widget['id_base']]['name'] 		= $widget['name'];
+
 			}
+
 		}
 
-		return apply_filters( 'century-toolkit/available_widgets', $available_widgets );
-	}
-
-
-	/**
-	 * Format results for log file
-	 *
-	 * @param array $results widget import results.
-	 */
-	public function format_results_for_log( $results ) {
-
-		if ( empty( $results ) ) {
-			esc_html_e( 'No results for widget import!', 'century-toolkit' );
-		}
-
-		// Loop sidebars.
-		foreach ( $results as $sidebar ) {
-			echo esc_html( $sidebar['name'] ) . ' : ' . esc_html( $sidebar['message'] ) . PHP_EOL . PHP_EOL;
-			// Loop widgets.
-			foreach ( $sidebar['widgets'] as $widget ) {
-				echo esc_html( $widget['name'] ) . ' - ' . esc_html( $widget['title'] ) . ' - ' . esc_html( $widget['message'] ) . PHP_EOL;
-			}
-			echo PHP_EOL;
-		}
+		return $available_widgets;
 	}
 }

@@ -137,7 +137,7 @@ module.exports = function (grunt) {
         makepot: {
             options: {
                 type: 'wp-plugins',
-                domainPath: 'i18n/languages/',
+                domainPath: 'languages/',
                 potHeaders: {
                     'report-msgid-bugs-to': 'themecentury@gmail.com',
                     'language-team': 'LANGUAGE <themecentury@gmail.com>',
@@ -150,7 +150,8 @@ module.exports = function (grunt) {
                     potFilename: 'century-toolkit.pot',
                     exclude: [
                         'vendor/.*',
-                        'upload/.*'
+                        'upload/.*',
+                        'node_modules/.*'
                     ],
 
                 }
