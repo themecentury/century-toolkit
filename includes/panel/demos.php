@@ -99,6 +99,14 @@ if (!class_exists('Century_Toolkit_Demos')) {
         public static function scripts()
         {
 
+            $is_not_toolkit_page = true;
+            if(isset($_GET['page']) && $_GET['page']=='century-toolkit-install-demos' ){
+                $is_not_toolkit_page = false;
+            }
+
+            if($is_not_toolkit_page){
+                return;
+            }
 
             // CSS
             wp_enqueue_style('century-toolkit-demos-style', CENTURY_TOOLKIT_PLUGIN_URI.'/assets/css/demos.css' );
