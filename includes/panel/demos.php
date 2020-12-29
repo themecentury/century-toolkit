@@ -162,7 +162,7 @@ if (!class_exists('Century_Toolkit_Demos')) {
          */
         public static function get_demo_all_categories($demo_imports)
         {
-            
+
 
             if(!$demo_imports){
                 return false;
@@ -279,96 +279,96 @@ if (!class_exists('Century_Toolkit_Demos')) {
                 <div class="century-toolkit-popup-text">
 
                     <p><?php echo
-                        sprintf(
-                            esc_html__('Century ToolKit help you browse and import ready made websites with few clicks. We recommend you to upload sample data on a fresh WordPress install to prevent conflicts with your current content. You can use this plugin to reset your site if needed: %1$sWordpress Database Reset%2$s.', 'century-toolkit'),
-                            '<a href="' . $plugin_link . '" target="_blank">',
-                            '</a>'
+                    sprintf(
+                        esc_html__('Century ToolKit help you browse and import ready made websites with few clicks. We recommend you to upload sample data on a fresh WordPress install to prevent conflicts with your current content. You can use this plugin to reset your site if needed: %1$sWordpress Database Reset%2$s.', 'century-toolkit'),
+                        '<a href="' . $plugin_link . '" target="_blank">',
+                        '</a>'
                         ); ?></p>
 
-                    <div class="century-toolkit-required-plugins-wrap">
-                        <h3><?php esc_html_e('Recommended Plugins', 'century-toolkit'); ?></h3>
-                        <p><?php esc_html_e('For your site to look exactly like this demo, the plugins below need to be activated.', 'century-toolkit'); ?></p>
-                        <div class="century-toolkit-required-plugins oe-plugin-installer">
-                            <?php
-                            self::required_plugins($free, 'free');
-                            self::required_plugins($premium, 'premium'); ?>
+                        <div class="century-toolkit-required-plugins-wrap">
+                            <h3><?php esc_html_e('Recommended Plugins', 'century-toolkit'); ?></h3>
+                            <p><?php esc_html_e('For your site to look exactly like this demo, the plugins below need to be activated.', 'century-toolkit'); ?></p>
+                            <div class="century-toolkit-required-plugins oe-plugin-installer">
+                                <?php
+                                self::required_plugins($free, 'free');
+                                self::required_plugins($premium, 'premium'); ?>
+                            </div>
                         </div>
+
                     </div>
 
-                </div>
-
-                <a class="century-toolkit-button century-toolkit-plugins-next"
-                   href="#"><?php esc_html_e('Next', 'century-toolkit'); ?></a>
-
-            </div>
-
-            <form method="post" id="century-toolkit-demo-import-form">
-
-                <input id="century_toolkit_import_demo" type="hidden" name="century_toolkit_import_demo"
-                       value="<?php echo esc_attr($demo); ?>"/>
-
-                <div class="century-toolkit-demo-import-form-types">
-
-                    <h2 class="title"><?php esc_html_e('Select what you want to import:', 'century-toolkit'); ?></h2>
-
-                    <ul class="century-toolkit-popup-text">
-                        <li>
-                            <label for="century_toolkit_import_xml">
-                                <input id="century_toolkit_import_xml" type="checkbox" name="century_toolkit_import_xml"
-                                       checked="checked"/>
-                                <strong><?php esc_html_e('Import XML Data', 'century-toolkit'); ?></strong>
-                                (<?php esc_html_e('pages, posts, images, menus, etc...', 'century-toolkit'); ?>)
-                            </label>
-                        </li>
-
-                        <li>
-                            <label for="century_toolkit_theme_settings">
-                                <input id="century_toolkit_theme_settings" type="checkbox" name="century_toolkit_theme_settings"
-                                       checked="checked"/>
-                                <strong><?php esc_html_e('Import Customizer Settings', 'century-toolkit'); ?></strong>
-                            </label>
-                        </li>
-
-                        <li>
-                            <label for="century_toolkit_import_widgets">
-                                <input id="century_toolkit_import_widgets" type="checkbox" name="century_toolkit_import_widgets"
-                                       checked="checked"/>
-                                <strong><?php esc_html_e('Import Widgets', 'century-toolkit'); ?></strong>
-                            </label>
-                        </li>
-
-                    </ul>
+                    <a class="century-toolkit-button century-toolkit-plugins-next"
+                    href="#"><?php esc_html_e('Next', 'century-toolkit'); ?></a>
 
                 </div>
 
-                <?php wp_nonce_field('century_toolkit_import_demo_data_nonce', 'century_toolkit_import_demo_data_nonce'); ?>
-                <input type="submit" name="submit" class="century-toolkit-button century-toolkit-import"
-                       value="<?php esc_html_e('Install', 'century-toolkit'); ?>"/>
+                <form method="post" id="century-toolkit-demo-import-form">
 
-            </form>
+                    <input id="century_toolkit_import_demo" type="hidden" name="century_toolkit_import_demo"
+                    value="<?php echo esc_attr($demo); ?>"/>
 
-            <div class="century-toolkit-loader">
-                <h2 class="title"><?php esc_html_e('The import process could take some time, please be patient', 'century-toolkit'); ?></h2>
-                <div class="century-toolkit-import-status century-toolkit-popup-text"></div>
-            </div>
+                    <div class="century-toolkit-demo-import-form-types">
 
-            <div class="century-toolkit-last">
-                <h2 style="font-size:45px;"><?php esc_html_e('Congratulations', 'century-toolkit'); ?></h2>
-                <h3><?php esc_html_e('Demo content imported successfully!', 'century-toolkit'); ?></h3>
-                <a href="<?php echo esc_url(get_home_url()); ?>"
-                   target="_blank"><?php esc_html_e('View Your Site', 'century-toolkit'); ?></a>
-            </div>
+                        <h2 class="title"><?php esc_html_e('Select what you want to import:', 'century-toolkit'); ?></h2>
 
-            <?php
-            die();
-        }
+                        <ul class="century-toolkit-popup-text">
+                            <li>
+                                <label for="century_toolkit_import_xml">
+                                    <input id="century_toolkit_import_xml" type="checkbox" name="century_toolkit_import_xml"
+                                    checked="checked"/>
+                                    <strong><?php esc_html_e('Import XML Data', 'century-toolkit'); ?></strong>
+                                    (<?php esc_html_e('pages, posts, images, menus, etc...', 'century-toolkit'); ?>)
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="century_toolkit_theme_settings">
+                                    <input id="century_toolkit_theme_settings" type="checkbox" name="century_toolkit_theme_settings"
+                                    checked="checked"/>
+                                    <strong><?php esc_html_e('Import Customizer Settings', 'century-toolkit'); ?></strong>
+                                </label>
+                            </li>
+
+                            <li>
+                                <label for="century_toolkit_import_widgets">
+                                    <input id="century_toolkit_import_widgets" type="checkbox" name="century_toolkit_import_widgets"
+                                    checked="checked"/>
+                                    <strong><?php esc_html_e('Import Widgets', 'century-toolkit'); ?></strong>
+                                </label>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <?php wp_nonce_field('century_toolkit_import_demo_data_nonce', 'century_toolkit_import_demo_data_nonce'); ?>
+                    <input type="submit" name="submit" class="century-toolkit-button century-toolkit-import"
+                    value="<?php esc_html_e('Install', 'century-toolkit'); ?>"/>
+
+                </form>
+
+                <div class="century-toolkit-loader">
+                    <h2 class="title"><?php esc_html_e('The import process could take some time, please be patient', 'century-toolkit'); ?></h2>
+                    <div class="century-toolkit-import-status century-toolkit-popup-text"></div>
+                </div>
+
+                <div class="century-toolkit-last">
+                    <h2 style="font-size:45px;"><?php esc_html_e('Congratulations', 'century-toolkit'); ?></h2>
+                    <h3><?php esc_html_e('Demo content imported successfully!', 'century-toolkit'); ?></h3>
+                    <a href="<?php echo esc_url(get_home_url()); ?>"
+                       target="_blank"><?php esc_html_e('View Your Site', 'century-toolkit'); ?></a>
+                   </div>
+
+                   <?php
+                   die();
+               }
 
         /**
          * Required plugins.
          *
          * @since 1.0.0
          */
-        public function required_plugins($plugins, $return)
+        public static function required_plugins($plugins, $return)
         {
 
             foreach ($plugins as $key => $plugin) {
@@ -401,28 +401,28 @@ if (!class_exists('Century_Toolkit_Demos')) {
                     } ?>
 
                     <div class="century-toolkit-plugin century-toolkit-clr century-toolkit-plugin-<?php echo $api['slug']; ?>"
-                         data-slug="<?php echo $api['slug']; ?>" data-init="<?php echo $api['init']; ?>">
-                        <h2><?php echo $api['name']; ?></h2>
-                        <?php
+                     data-slug="<?php echo $api['slug']; ?>" data-init="<?php echo $api['init']; ?>">
+                     <h2><?php echo $api['name']; ?></h2>
+                     <?php
                         // If premium plugins and not installed
-                        if ('premium' == $return
-                            && !file_exists(WP_PLUGIN_DIR . '/' . $plugin['init'])){ ?>
+                     if ('premium' == $return
+                        && !file_exists(WP_PLUGIN_DIR . '/' . $plugin['init'])){ ?>
                             <a class="button" href="<?php echo $api['link']; ?>"
                                target="_blank"><?php esc_html_e('Get This Addon', 'century-toolkit'); ?></a>
-                            <?php
-                        } else { ?>
+                               <?php
+                           } else { ?>
                             <button class="<?php echo $button_classes; ?>" data-init="<?php echo $api['init']; ?>"
-                                    data-slug="<?php echo $api['slug']; ?>"
-                                    data-name="<?php echo $api['name']; ?>"><?php echo $button_text; ?></button>
-                            <?php
-                        } ?>
-                    </div>
+                                data-slug="<?php echo $api['slug']; ?>"
+                                data-name="<?php echo $api['name']; ?>"><?php echo $button_text; ?></button>
+                                <?php
+                            } ?>
+                        </div>
 
-                    <?php
+                        <?php
+                    }
                 }
-            }
 
-        }
+            }
 
         /**
          * Required plugins activate

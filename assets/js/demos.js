@@ -34,20 +34,22 @@
             $( '.century-toolkit-demo-wrap .theme-actions a.button' ).on( 'click', function( e ) {
                 e.stopPropagation();
             } );
-
+            
             // Get demo data
             $( '.century-toolkit-open-popup' ).click( function( e ) {
+                
                 e.preventDefault();
 
                 // Vars
                 var $selected_demo 		= $( this ).data( 'demo-id' ),
-                    $loading_icon 		= $( '.preview-' + $selected_demo ),
-                    $disable_preview 	= $( '.preview-all-' + $selected_demo );
+                $loading_icon 		= $( '.preview-' + $selected_demo ),
+                $disable_preview 	= $( '.preview-all-' + $selected_demo );
 
                 $loading_icon.show();
                 $disable_preview.show();
 
                 that.getDemoData( $selected_demo );
+
             } );
 
             $( document ).on( 'click' 						, '.install-now', this.installNow );
@@ -63,9 +65,9 @@
 
             // Cache selector to all items
             var $items 				= $( '.century-toolkit-demo-wrap .themes' ).find( '.theme-wrap' ),
-                fadeoutClass 		= 'century-toolkit-is-fadeout',
-                fadeinClass 		= 'century-toolkit-is-fadein',
-                animationDuration 	= 200;
+            fadeoutClass 		= 'century-toolkit-is-fadeout',
+            fadeinClass 		= 'century-toolkit-is-fadein',
+            animationDuration 	= 200;
 
             // Hide all items.
             var fadeOut = function () {
@@ -168,7 +170,7 @@
 
                     // Vars
                     var $loading_icon 		= $( '.preview-' + demo_name ),
-                        $disable_preview 	= $( '.preview-all-' + demo_name );
+                    $disable_preview 	= $( '.preview-all-' + demo_name );
 
                     // Hide loader
                     $loading_icon.hide();
@@ -218,8 +220,8 @@
 
                 // Vars
                 var demo 	= $( this ).find( '[name="century_toolkit_import_demo"]' ).val(),
-                    nonce 	= $( this ).find( '[name="century_toolkit_import_demo_data_nonce"]' ).val(),
-                    contentToImport = [];
+                nonce 	= $( this ).find( '[name="century_toolkit_import_demo_data_nonce"]' ).val(),
+                contentToImport = [];
 
                 // Check what need to be imported
                 $( this ).find( 'input[type="checkbox"]' ).each( function() {
@@ -246,13 +248,13 @@
         // importing the content.
         importContent: function( importData ) {
             var that = this,
-                currentContent,
-                importingLimit,
-                timerStart = Date.now(),
-                ajaxData = {
-                    century_toolkit_import_demo: importData.demo,
-                    century_toolkit_import_demo_data_nonce: importData.nonce
-                };
+            currentContent,
+            importingLimit,
+            timerStart = Date.now(),
+            ajaxData = {
+                century_toolkit_import_demo: importData.demo,
+                century_toolkit_import_demo_data_nonce: importData.nonce
+            };
 
             this.allowPopupClosing = false;
             $( '.century-toolkit-demo-popup-close' ).fadeOut();
@@ -325,14 +327,14 @@
                     // Check if the importing of the content was successful or if there was any error
                     if ( data.status === 500 || data.status === 502 || data.status === 503 ) {
                         $( '.century-toolkit-importing' )
-                            .addClass( 'century-toolkit-importing-failed' )
-                            .removeClass( 'century-toolkit-importing' )
-                            .text( CenturyToolKitDemos.content_importing_error + ' '+ data.status );
+                        .addClass( 'century-toolkit-importing-failed' )
+                        .removeClass( 'century-toolkit-importing' )
+                        .text( CenturyToolKitDemos.content_importing_error + ' '+ data.status );
                     } else if ( data.responseText.indexOf( 'successful import' ) !== -1 ) {
                         $( '.century-toolkit-importing' ).addClass( 'century-toolkit-imported' ).removeClass( 'century-toolkit-importing' );
                     } else {
                         var errors = $.parseJSON( data.responseText ),
-                            errorMessage = '';
+                        errorMessage = '';
 
                         // Iterate through the list of errors
                         for ( var error in errors ) {
@@ -346,9 +348,9 @@
 
                         // Display the error message
                         $( '.century-toolkit-importing' )
-                            .addClass( 'century-toolkit-importing-failed' )
-                            .removeClass( 'century-toolkit-importing' )
-                            .text( errorMessage );
+                        .addClass( 'century-toolkit-importing-failed' )
+                        .removeClass( 'century-toolkit-importing' )
+                        .text( errorMessage );
 
                         that.allowPopupClosing = true;
                         $( '.century-toolkit-demo-popup-close' ).fadeIn();
@@ -375,9 +377,9 @@
                 $( '.century-toolkit-demo-popup-close' ).fadeIn();
 
                 $( '.century-toolkit-importing' )
-                    .addClass( 'century-toolkit-importing-failed' )
-                    .removeClass( 'century-toolkit-importing' )
-                    .text( CenturyToolKitDemos.content_importing_error );
+                .addClass( 'century-toolkit-importing-failed' )
+                .removeClass( 'century-toolkit-importing' )
+                .text( CenturyToolKitDemos.content_importing_error );
             }, 15 * 60 * 1000 );
 
         },
@@ -408,7 +410,7 @@
 
             // Vars
             var $button 	= $( e.target ),
-                $document   = $( document );
+            $document   = $( document );
 
             if ( $button.hasClass( 'updating-message' ) || $button.hasClass( 'button-disabled' ) ) {
                 return;
@@ -421,8 +423,8 @@
                     var $message = $( '.install-now.updating-message' );
 
                     $message
-                        .removeClass( 'updating-message' )
-                        .text( wp.updates.l10n.installNow );
+                    .removeClass( 'updating-message' )
+                    .text( wp.updates.l10n.installNow );
 
                     wp.a11y.speak( wp.updates.l10n.updateCancel, 'polite' );
                 } );
@@ -439,8 +441,8 @@
 
             // Vars
             var $button = $( e.target ),
-                $init 	= $button.data( 'init' ),
-                $slug 	= $button.data( 'slug' );
+            $init 	= $button.data( 'init' ),
+            $slug 	= $button.data( 'slug' );
 
             if ( $button.hasClass( 'updating-message' ) || $button.hasClass( 'button-disabled' ) ) {
                 return;
@@ -460,9 +462,9 @@
                 if ( result.success ) {
 
                     $button.removeClass( 'button-primary install-now activate-now updating-message' )
-                        .attr( 'disabled', 'disabled' )
-                        .addClass( 'disabled' )
-                        .text( CenturyToolKitDemos.button_active );
+                    .attr( 'disabled', 'disabled' )
+                    .addClass( 'disabled' )
+                    .text( CenturyToolKitDemos.button_active );
 
                 }
 
@@ -479,8 +481,8 @@
             var $init = $message.data('init');
 
             $message.removeClass( 'install-now installed button-disabled updated-message' )
-                .addClass( 'updating-message' )
-                .html( CenturyToolKitDemos.button_activating );
+            .addClass( 'updating-message' )
+            .html( CenturyToolKitDemos.button_activating );
 
             // WordPress adds "Activate" button after waiting for 1000ms. So we will run our activation after that.
             setTimeout( function() {
@@ -497,9 +499,9 @@
                     if ( result.success ) {
 
                         $message.removeClass( 'button-primary install-now activate-now updating-message' )
-                            .attr( 'disabled', 'disabled' )
-                            .addClass( 'disabled' )
-                            .text( CenturyToolKitDemos.button_active );
+                        .attr( 'disabled', 'disabled' )
+                        .addClass( 'disabled' )
+                        .text( CenturyToolKitDemos.button_active );
 
                     } else {
                         $message.removeClass( 'updating-message' );
@@ -515,7 +517,7 @@
             e.preventDefault();
 
             var $card = $( '.century-toolkit-plugin-' + args.slug ),
-                $button = $card.find( '.button' );
+            $button = $card.find( '.button' );
 
             $button.addClass( 'updating-message' );
         },
