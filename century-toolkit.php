@@ -3,7 +3,7 @@
  * Plugin Name:       Century ToolKit
  * Plugin URI:        https://wordpress.org/plugins/century-toolkit
  * Description:       Century ToolKit is specially developed for themecentury themes. This plugin help to import demo content and related settings.
- * Version:           1.2.0
+ * Version:           1.2.1
  * Author:            themecentury
  * Author URI:        https://themecentury.com/
  * License:           GPL-2.0+
@@ -18,27 +18,27 @@ if (!defined('ABSPATH')) {
 
 // Define CENTURY_TOOLKIT_PLUGIN_FILE.
 if (!defined('CENTURY_TOOLKIT_FILE')) {
-    define('CENTURY_TOOLKIT_FILE', __FILE__);
+	define('CENTURY_TOOLKIT_FILE', __FILE__);
 }
 
 // Define CENTURY_TOOLKIT_VERSION.
 if (!defined('CENTURY_TOOLKIT_VERSION')) {
-    define('CENTURY_TOOLKIT_VERSION', '1.1.0');
+	define('CENTURY_TOOLKIT_VERSION', '1.1.0');
 }
 
 // Define CENTURY_TOOLKIT_PLUGIN_URI.
 if (!defined('CENTURY_TOOLKIT_PLUGIN_URI')) {
-    define('CENTURY_TOOLKIT_PLUGIN_URI', plugins_url('', CENTURY_TOOLKIT_FILE) . '/');
+	define('CENTURY_TOOLKIT_PLUGIN_URI', plugins_url('', CENTURY_TOOLKIT_FILE) . '/');
 }
 
 // Define CENTURY_TOOLKIT_PLUGIN_DIR.
 if (!defined('CENTURY_TOOLKIT_PLUGIN_DIR')) {
-    define('CENTURY_TOOLKIT_PLUGIN_DIR', plugin_dir_path(CENTURY_TOOLKIT_FILE) );
+	define('CENTURY_TOOLKIT_PLUGIN_DIR', plugin_dir_path(CENTURY_TOOLKIT_FILE) );
 }
 
 // Include the main Century_Toolkit class.
 if (!class_exists('Century_Toolkit')) {
-    include_once dirname(__FILE__) . '/includes/class-century-toolkit.php';
+	include_once dirname(__FILE__) . '/includes/class-century-toolkit.php';
 }
 
 /**

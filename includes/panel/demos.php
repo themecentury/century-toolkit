@@ -217,8 +217,10 @@ if (!class_exists('Century_Toolkit_Demos')) {
         {
             global $pagenow;
 
+
+
             // Display on the demos pages
-            if (('themes.php' == $pagenow && 'century-toolkit-install-demos' == $_GET['page'])) { ?>
+            if ( isset($_GET['page']) && ('themes.php' == $pagenow && 'century-toolkit-install-demos' == $_GET['page'])) { ?>
 
                 <div id="century-toolkit-demo-popup-wrap">
                     <div class="century-toolkit-demo-popup-container">

@@ -2,8 +2,8 @@
 Contributors: themecentury
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themecentury
 Requires at least: 4.0.0
-Tested up to: 5.3
-Stable tag: 1.2.0
+Tested up to: 5.6
+Stable tag: 1.2.1
 License: GPLv3 or later
 
 ToolKit for WordPress themes and demo content importer for themes.
